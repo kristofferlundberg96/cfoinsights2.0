@@ -192,7 +192,7 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 import dj_database_url
-db_from_env = dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 MIGRATION_MODULES = {
