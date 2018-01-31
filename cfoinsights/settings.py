@@ -206,5 +206,5 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+if os.environ.get('DEVELOPMENT') is not None:
     from settings_dev import *
