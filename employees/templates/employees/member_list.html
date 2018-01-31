@@ -1,43 +1,41 @@
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foundation for Sites</title>
-  <link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/subpages.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-</head>
-<body>
-  <div class="header">
-    <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
-      <div class="title-bar-left">
-        <div class="title-bar-title">
-          <img src="res/logo.png" class="logo">
-        </div>
-      </div>
-      <div class="title-bar-right">
-        <button class="menu-icon" type="button" data-toggle></button>
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'employees/styles.css' %}">
+{% endblock %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
       </div>
     </div>
-    <div class="top-bar" id="top-menu">
-      <div class="top-bar-left" id="desktop-logo">
-        <img src="res/logo.png" class="logo">
-      </div>
-      <div class="top-bar-right">
-        <ul class="vertical large-horizontal menu">
-          <li><a class="active" href="#hero">Home</a></li>
-          <li><a href="#agenda">Agenda</a></li>
-          <li><a href="#speakers">Speakers</a></li>
-          <li><a href="#sponsors">Sponsors</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#tickets">Register now</a></li>
-        </ul>
-      </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
     </div>
   </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}#agenda">Agenda</a></li>
+        <li><a href="{% url 'index' %}#speakers">Speakers</a></li>
+        <li><a href="{% url 'index' %}#sponsors">Sponsors</a></li>
+        <li><a class="active" href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
+
+{% block content %}
 
   <section class="subpage-hero" id="speakers-hero">
     <div class="content">
@@ -48,76 +46,30 @@
 
   <section class="content members-grid">
     <div class="grid-x grid-margin-x">
+      {% for employee in employees %}
       <div class="large-3 medium-4 cell">
-        <a class="card member-card" href="hecht.html">
+        <a class="card member-card" href="{% url 'employee_detail' slug=employee.slug %}">
           <div class="card-image">
-            <img src="res/hecht.png">
+            <img src="{{ employee.photo.url }}">
           </div>
           <div class="card-divider member-title">
-            <h2>Andreas Hougaard</h2>
-            <p>Head of Marketing</p>
+            <div class="member-title-inner">
+                <h2>{{ employee.name }}</h2>
+                <p class="member-position">{{ employee.title }}</p>
+            </div>
           </div>
           <div class="card-section member-details">
             <ul class="bulletless fa-ul">
-              <li><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">BSc in Business Administration & Economics</span></li>
-              <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">Copenhagen Business School</span></li>
+              <li class="employee-l-top"><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">{{ employee.education }}</span></li>
+              <li class="employee-l-bottom"><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">{{ employee.school }}</span></li>
             </ul>
           </div>
         </a>
       </div>
-      <div class="large-3 medium-4 cell">
-        <div class="card member-card">
-          <div class="card-image">
-            <img src="res/hecht.png">
-          </div>
-          <div class="card-divider member-title">
-            <h2>Andreas Hougaard</h2>
-            <p>Head of Marketing</p>
-          </div>
-          <div class="card-section member-details">
-            <ul class="bulletless fa-ul">
-              <li><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">BSc in Business Administration & Economics</span></li>
-              <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">Copenhagen Business School</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="large-3 medium-4 cell">
-        <div class="card member-card">
-          <div class="card-image">
-            <img src="res/hecht.png">
-          </div>
-          <div class="card-divider member-title">
-            <h2>Andreas Hougaard</h2>
-            <p>Head of Marketing</p>
-          </div>
-          <div class="card-section member-details">
-            <ul class="bulletless fa-ul">
-              <li><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">BSc in Business Administration & Economics</span></li>
-              <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">Copenhagen Business School</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="large-3 medium-4 cell">
-        <div class="card member-card">
-          <div class="card-image">
-            <img src="res/hecht.png">
-          </div>
-          <div class="card-divider member-title">
-            <h2>Andreas Hougaard</h2>
-            <p>Head of Marketing</p>
-          </div>
-          <div class="card-section member-details">
-            <ul class="bulletless fa-ul">
-              <li><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">BSc in Business Administration & Economics</span></li>
-              <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">Copenhagen Business School</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
 </section>
+{% endblock %}
 
 
 
@@ -126,17 +78,10 @@
   <p>© COPYRIGHT 2017 CFO INSIGHTS IVS, ALL RIGHTS RESERVED 920 BROADWAY, 7TH FLOOR, NEW YORK, NY 10010 (646) 389-2523 </p>
 </section>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js"></script>
-<script src="js/app.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
+{% block scripts %}
 <script>
   window.FontAwesomeConfig = {
     searchPseudoElements: true
   }
 </script>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+.member-details {
+    position: relative;
+    min-height: 160px !important;
+}
+
+.member-title {
+    min-height: 128px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+p.member-position {
+    margin-bottom: 0px;
+}
+
+.member-card {
+    min-height: 481.34px;
+}
+
+.employee-l-top {
+    position: absolute !important;
+    top: 20px !important;
+}
+
+.employee-l-bottom {
+    position: absolute !important;
+    bottom: 20px !important;
+}

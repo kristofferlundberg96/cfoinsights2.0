@@ -12,49 +12,31 @@ from tinymce.widgets import TinyMCE
 from agenda.models import Panel
 
 # Create your models here.
-
-class SpeakerManager(models.Manager):
-    def random(self):
-        count = self.aggregate(count=Count('id'))['count']
-        random_index = randint(0, count - 1)
-        return self.all()[random_index]
-
-
-class Speaker(models.Model):
+class Team(models.Model):
     name = models.TextField()
-    title = models.TextField()
-    company = models.TextField()
-    facebook_link = models.TextField(null=True, blank=True)
-    twitter_link = models.TextField(null=True, blank=True)
-    linkedin_link = models.TextField(null=True, blank=True)
-    youtube_link = models.TextField(null=True, blank=True)
-    panels = models.ManyToManyField(Panel, related_name="speakers")
-    photo = models.ImageField(upload_to='speakers')
-    company_logo = models.ImageField(upload_to='speakers/company_logos')
-    cv_list = HTMLField(null=True, blank=True)
-    bio = HTMLField()
-    slug = models.SlugField(unique=True, blank=True)
-
-    objects = models.Manager()
-    randoms = SpeakerManager()
 
     def __str__(self):
         return self.name
 
+class Employee(models.Model):
+    name = models.TextField()
+    title = models.TextField()
+    bio = models.TextField()
+    team = models.ForeignKey(Team, related_name="members")
+    education = models.TextField()
+    school = models.TextField()
+    work = models.TextField()
+    slug = models.SlugField(unique=True, blank=True)
+    linkedin_link = models.TextField(null=True, blank=True)
+    photo = models.ImageField(upload_to='members')
+    email = models.TextField(blank=True, null=True)
+    phone_number = models.TextField(blank=True, null=True)
+
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.name.replace('ø', 'oe').replace('å', 'aa').replace('æ', 'ae'))
 
-        super(Speaker, self).save(*args, **kwargs)
+        super(Employee, self).save(*args, **kwargs)
 
-class SpeakerModelForm(forms.ModelForm):
-    cv_list = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}), required=False)
-    bio = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-
-    class Meta:
-        model = Speaker
-        exclude = ('slug',)
-
-
-class SpeakerModelAdmin(admin.ModelAdmin):
-    form = SpeakerModelForm
+    def __str__(self):
+        return self.name

@@ -369,16 +369,6 @@ h2.subheaderless {
   }
 }
 
-@media only screen and (max-width: 1330px) and (min-width: 1300px) {
-  .grid-margin-x {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .ticket-wrapper::before {
-      width: 420px !important;
-  }
-}
-
 @media only screen and (max-width: 640px) {
   .hero #subtext {
     display: block;
@@ -1168,11 +1158,6 @@ h2, .h2 {
 
 .member-info .cell {
   height: 500px;
-}
-
-#hecht {
-  background-image: url("../res/hecht.png");
-  background-size: cover;
 }
 
 .member-info-wrapper {

@@ -25,6 +25,7 @@ urlpatterns += (
     url(r'^agenda/', include('agenda.urls')),
     url(r'^speakers/', include('speakers.urls')),
     url(r'^sponsors/', include('sponsors.urls')),
+    url(r'^team/', include('employees.urls')),
 
     url(r'^cms', include('cms.urls')),
 )

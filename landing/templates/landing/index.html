@@ -201,9 +201,9 @@
           </div>
           <div class="agenda-body ">
             <ul>
-              <li>Best practices in post-merger integration (PMI)</li>
-              <li>The modern CFO: how to go from a traditional CFO to a strategic executive</li>
-              <li>Employee Management: Attract the talent everyone else wants</li>
+              {% for panel in strategy_panels %}
+                <li>{{ panel.name }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -215,9 +215,9 @@
           </div>
           <div class="agenda-body">
             <ul>
-              <li>How to unlock the value of your company’s data</li>
-              <li>Meet your new associate: Mr. Robot. How to accelerate the value of robotics process automation</li>
-              <li>The next frontier of FP&A</li>
+              {% for panel in finance_panels %}
+                <li>{{ panel.name }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -229,9 +229,9 @@
           </div>
           <div class="agenda-body">
             <ul>
-              <li>What is Artificial intelligence (AI) and how can you use it to leverage your data insights?</li>
-              <li>Blockchain: how this new technology can increase transparency and reduce costs</li>
-              <li>The next frontier of FP&A</li>
+              {% for panel in future_panels %}
+                <li>{{ panel.name }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -387,30 +387,19 @@
 
 <section id="about">
   <div class="content">
-    <h2>Who are CFO Insights?</h2>
-    <p class="subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+    <h2 class="subheaderless">Who are CFO Insights?</h2>
     <div class="grid-x grid-margin-x">
       <div class="large-6 cell">
         <img src="{% static 'img/team.JPG' %}" alt="The taem behind CFO Insights is made up of 20 students.">
       </div>
       <div class="large-6 cell">
-        <h3>Lorem Ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>The who, the why, the what.</h3>
+        <p>CFO Insights was founded on the idea that a business is nothing more than a collection of people. We might use technology in our day to day work and the collection of people might be united behind a company name, but it is the people and the decisions they make that define the future of any company.</p>
+        <p>That's why we believe in the importance of bringing business leaders together in a neutral forum where they can learn and grow together. Otto von Bismarck famously said “Fools learn from experience. I prefer to learn from the experience of others.” and that is the core reason for why CFO Insights exists - so that we may learn from each other.</p>
       </div>
     </div>
     <div class="center">
-      <a class="button button-disabled" href="#">Broby is uploading your bios <3</a>
+      <a class="button button-disabled" href="{% url 'employees' %}">Read more about the team</a>
     </div>
   </div>
 </section>

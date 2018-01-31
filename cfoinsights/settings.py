@@ -122,7 +122,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 
@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'agenda.apps.AgendaConfig',
     'speakers.apps.SpeakersConfig',
     'sponsors.apps.SponsorsConfig',
+    'employees.apps.EmployeesConfig',
 
     'tinymce',
     'djangocms_admin_style',
@@ -226,4 +227,4 @@ THUMBNAIL_PROCESSORS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 if os.environ.get('DEVELOPMENT') is not None:
-    from settings_dev import *
+    from .settings_dev import *
