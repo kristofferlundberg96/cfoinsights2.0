@@ -479,6 +479,10 @@ h2.subheaderless {
   .member-info-square {
     margin-top: 40px !important;
   }
+
+  .e-mail-input {
+    width: 300px !important;
+  }
 }
 
 @media only screen and (max-width: 300px) {
