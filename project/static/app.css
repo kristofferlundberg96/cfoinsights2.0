@@ -275,6 +275,10 @@ h2.subheaderless {
     width: 950px;
   }
 
+  .member-title {
+    height: 124px !important;
+  }
+
   .speaker-featured-img {
     width: 215px !important;
     height: 215px !important;
