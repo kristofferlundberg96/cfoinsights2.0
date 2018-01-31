@@ -13,7 +13,7 @@ class LandingView(TemplateView):
         context = super(LandingView, self).get_context_data(**kwargs)
         featured_speakers = []
 
-        while len(featured_speakers) < 4:
+        while len(featured_speakers) < 8:
             featured_speaker = Speaker.randoms.random_featured()
             if not featured_speaker in featured_speakers:
                 featured_speakers.append(featured_speaker)
