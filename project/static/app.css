@@ -279,6 +279,14 @@ h2.subheaderless {
     height: 124px !important;
   }
 
+  .member-title h2 {
+    font-size: 20px !important;
+  }
+
+  .member-title p {
+    font-size: 14px !important;
+  }
+
   .speaker-featured-img {
     width: 215px !important;
     height: 215px !important;
