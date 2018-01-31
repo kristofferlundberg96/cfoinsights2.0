@@ -1,0 +1,217 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a class="active" href="{% url 'index' %}#agenda">Agenda</a></li>
+        <li><a href="{% url 'index' %}#speakers">Speakers</a></li>
+        <li><a href="{% url 'index' %}#sponsors">Sponsors</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'agenda/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="subpage-hero" id="speakers-hero">
+  <div class="content">
+    <h1 class="subpage-header">Agenda</h1>
+    <p class="subheader">CFO Insights 2018 is organized around 3 main themes with 3 panels running in parallel each. Join us as we explore the role of the future CFO with 9 panel debates and 3 keynotes.</p>
+    <p class="subheader">Interested in speaking? Apply now!</p>
+  </div>
+</section>
+
+<section>
+  <h2>The game plan</h2>
+  <div class="agenda-wrapper-full">
+    <div class="content">
+      <div class="agenda-narrow">
+        <h2><span class="agenda-time">8:15 </span>Registration & breakfast</h2>
+        <p class="push-right">Grab your event documentation package, some breakfast and exchange your first business cards.</p>
+        <h2><span class="agenda-time">9:00 </span>Official welcome to CFO Insights 2018</h2>
+        <p class="push-right">Get to know the practicalities of the day and be introduced to our conferencier.</p>
+        <h2><span class="agenda-time">9:10 </span>Keynote 1: {% if panels.3 %} {{ panels.3.0.1.name }} {% else %} TBA {% endif %}</h2>
+        <p class="push-right">{% if panels.3 %} panels.3.0.1.description {% else %} Stay tuned! {% endif %}</p>
+        <h2><span class="agenda-time">10:10 </span>Strategy panels:</h2>
+      </div>
+    </div>
+
+    <div class="light-blue-layer panel-columns">
+      <div class="content">
+        <div class="grid-x grid-margin-x panels-grid">
+          {% for letter, panel in panels.0 %}
+          <div class="large-4 cell" id="{{ panel.pk }}">
+            <div class="card panel-card">
+              <div class="card-divider panel-title">
+                <h2>
+                  Stage {{letter}}
+                </h2>
+              </div>
+              <div class="card-section panel-name">
+                  <h3>
+                    {{ panel.name }}
+                  </h3>
+              </div>
+              <div class="card-section panel-speakers">
+                {% for speaker in panel.speakers.all %}
+                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                  <p class="speaker-name">{{ speaker.name }}</p>
+                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title">{{ speaker.title }}</p>
+                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                </a>
+                {% endfor %}
+              </div>
+              <div class="card-section panel-desc">
+                <p>{{ panel.description }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content">
+      <div class="agenda-narrow">
+        <h2><span class="agenda-time">11:25 </span>Keynote 2: {% if panels.4 %} {{ panels.4.0.1.name }} {% else %} TBA {% endif %}</h2>
+        <p class="push-right">{% if panels.4 %} panels.4.0.1.description {% else %} Stay tuned! {% endif %}</p>
+        <h2><span class="agenda-time">11:55 </span>Lunch & networking</h2>
+        <p class="push-right">Enjoy a well-deserved lunch and continue the discussions in the lobby.</p>
+        <h2><span class="agenda-time">13:10 </span>Financial Management Panels:</h2>
+      </div>
+    </div>
+
+    <div class="light-blue-layer panel-columns">
+      <div class="content">
+        <div class="grid-x grid-margin-x panels-grid">
+          {% for letter, panel in panels.1 %}
+          <div class="large-4 cell" id="{{ panel.pk }}">
+            <div class="card panel-card">
+              <div class="card-divider panel-title">
+                <h2>
+                  Stage {{letter}}
+                </h2>
+              </div>
+              <div class="card-section panel-name">
+                <h3>
+                  {{ panel.name }}
+                </h3>
+              </div>
+              <div class="card-section panel-speakers">
+                {% for speaker in panel.speakers.all %}
+                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                  <p class="speaker-name">{{ speaker.name }}</p>
+                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title">{{ speaker.title }}</p>
+                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                </a>
+                {% endfor %}
+              </div>
+              <div class="card-section panel-desc">
+                <p>{{ panel.description }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="agenda-narrow">
+        <h2 id="{{ panels.5.0.1.pk }}"><span class="agenda-time"">14:25 </span>Keynote 3: {% if panels.5 %} {{ panels.5.0.1.name }} {% else %} TBA {% endif %}</h2>
+        {% for speaker in panels.5.0.1.speakers.all %}
+          <a class="card panelist-slug push-right" href="{% url 'speaker_detail' slug=speaker.slug %}">
+            <p class="speaker-name">{{ speaker.name }}</p>
+            <img src="{{ speaker.photo.url }}" class="speaker-img">
+            <div class="hover-overlay"></div>
+            <p class="speaker-title">{{ speaker.title }}</p>
+            <img class="company-logo" src="{{ speaker.company_logo.url }}">
+          </a>
+        {% endfor %}
+        <p class="push-right">{% if panels.5 %} {{ panels.5.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</p>
+      </div>
+    </div>
+
+
+    <div class="light-blue-layer panel-columns">
+      <div class="content">
+        <div class="grid-x grid-margin-x panels-grid">
+          {% for letter, panel in panels.2 %}
+          <div class="large-4 cell" id="{{ panel.pk }}">
+            <div class="card panel-card">
+              <div class="card-divider panel-title">
+                <h2>
+                  Stage {{letter}}
+                </h2>
+              </div>
+              <div class="card-section panel-name">
+                <h3>
+                  {{ panel.name }}
+                </h3>
+              </div>
+              <div class="card-section panel-speakers {% if panel.speakers.all|length >= 4%}full-panel{%endif%}">
+                {% for speaker in panel.speakers.all %}
+                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                  <p class="speaker-name">{{ speaker.name }}</p>
+                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title">{{ speaker.title }}</p>
+                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                </a>
+                {% endfor %}
+              </div>
+              <div class="card-section panel-desc">
+                <p>{{ panel.description }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="agenda-narrow">
+        <h2><span class="agenda-time">16:30 </span>Closing Remarks</h2>
+        <p class="push-right">A big thank you to all our attendees, speakers and partners as we bring CFO Insights 2018 to an official close.</p>
+        <h2><span class="agenda-time">16:40 </span>Post-conference drinks</h2>
+        <p class="push-right">Join us in the late afternoon as we end the day with some drinks. This will be the best time to network without all the conference hassle.</p>
+        <h2><span class="agenda-time">18:00 </span>Done!</h2>
+        <p class="push-right">See you next year!</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'agenda/js/agenda.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'speakers/style.css' %}">
+{% endblock %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}#agenda">Agenda</a></li>
+        <li><a class="active" href="{% url 'index' %}#speakers">Speakers</a></li>
+        <li><a href="{% url 'index' %}#sponsors">Sponsors</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
+{% block content %}
+<section class="subpage-hero" id="speakers-hero">
+  <h1 class="subpage-header">{{ speaker.name }}</h1>
+</section>
+
+<section class="light-blue-layer speaker-info">
+  <div class="grid-x grid-margin-x content">
+    <div class="large-3 cell">
+      <div class="card">
+        <img class="speaker-portrait" src='{{ speaker.photo.url }}'>
+        <div class="card-section">
+          <h3>{{ speaker.name }}</h3>
+          <p class="subheader speaker-detail-subheader">{{ speaker.title}}</p>
+          <img class="speaker_company_logo" src="{{ speaker.company_logo.url }}">
+        </div>
+      </div>
+    </div>
+    <div class="large-9 cell">
+      <div class="grid-x grid-margin-x">
+        <div class="large-6 cell">
+          {{ speaker.bio|safe }}
+          {% if speaker.panels.length > 1 %}
+          <p>You can listen to {{ first_name }} at these sessions:</p>
+          {% else %}
+          <p>You can listen to {{ first_name }} at this session:</p>
+          {% endif %}
+          <ul class="left-aligned">
+            {% for panel in speaker.panels.all %}
+            <li class="bulletless"><a href="{% url 'agenda' %}#{{panel.pk}}">{{ panel.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="large-6 cell">
+          <div class="speaker-cv-list-no-margin">
+            {% if speaker.cv_list %}
+            {{ speaker.cv_list|safe }}
+            {% endif %}
+          </div>
+          <p>Connect with {{ first_name }} on</p>
+          <div class="speaker-social">
+            {% if speaker.linkedin_link %}
+              <a href="{{ speaker.linkedin_link }}"><i class="fab fa-linkedin"></i></a>
+            {% endif %}
+            {% if speaker.twitter_link %}
+              <a href="{{ speaker.twitter_link }}"><i class="fab fa-twitter-square"></i></a>
+            {% endif %}
+            {% if speaker.facebook_link %}
+              <a href="{{ speaker.facebook_link }}"><i class="fab fa-facebook"></i></a>
+            {% endif %}
+            {% if speaker.youtube_link %}
+              <a href="{{ speaker.youtube_link }}"><i class="fab fa-youtube"></i></a>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content speaker-info ">
+    <h3>You might also be interested in checking out some of these speakers</h3>
+    <div class="orbit speaker-carousel" role="region" aria-label="Recommended Speakers" data-orbit>
+      <div class="orbit-wrapper">
+        <div class="orbit-controls">
+          <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+          <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+        </div>
+
+        <ul class="orbit-container" id="orbit">
+          {% for recommendation_list in recommendations %}
+          <li class="{% if forloop.first %}is-active{%endif%} orbit-slide">
+            <div class="grid-x grid-margin-x center">
+              {% for recommended_speaker in recommendation_list %}
+              <div class="medium-2 cell">
+                <a class="card" href="{% url 'speaker_detail' slug=recommended_speaker.slug %}"">
+                  <img src="{{ recommended_speaker.photo.url }}">
+                  <div class="hover-overlay"></div>
+                  <div class="card-section">
+                    <h3 class="carousel-header">{{ recommended_speaker.name }}</h3>
+                    <p class="carousel-subheader">{{ recommended_speaker.title}}, {{recommended_speaker.company }}</p>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+
+    {% block scripts %}
+    <script type="text/javascript" src="{% static 'speakers/js/speakers.js' %}"></script>
+    {% endblock %}

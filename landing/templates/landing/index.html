@@ -1,0 +1,433 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a class="active" href="#hero">Home</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'landing.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero white-text" id="hero">
+  <div class="layer">
+    <div class="hero-content">
+      <p class="subheader">May 25th 2018, Marriott Hotel Copenhagen</p>
+      <h1>CFO Insights 2018</h1>
+      <div id="img-text">
+        <p id="subtext">The future of the CFO is here.</p>
+      </div>
+      <div class="center">
+        <a class="button transparent" href="#tickets">Register now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Section -->
+<section>
+  <h2 class="subheaderless">
+    We're putting new tires on the racing cars of CFOs
+  </h2>
+  <div class="content">
+    <div class="grid-x grid-margin-x">
+      <div class="large-6 cell">
+        <img src="{% static 'img/placeholder_vid.png' %}">
+      </div>
+      <div class="large-6 cell">
+        <h3>The largest CFO conference and the go-to place for CFOs in Scandinavia</h3>
+        <p class="subheader">By students, for professionals.</p>
+        <p>
+        The role of the CFO is currently undergoing a transformative change. Technology continues to crawl into every aspect of business, CEOs are calling for strategic advisors and markets are more volatile and unpredictable than ever.</p>
+        <p>That's why we've invited 40+ of the region's biggest CFOs, recognised experts and thought leaders to prepare you for what the future of the CFO holds.</p>
+      </div>
+    </div>
+    <div class="center">
+      <a class="button" href="#tickets">Register now</a>
+    </div>
+  </div>
+</section>
+
+<section class="white-text blue-layer">
+  <div id="glance-overlay">
+    <h2>
+      CFO Insights 2018 at a glance
+    </h2>
+    <div class="content">
+      <p class="subheader center">
+        Busy schedule and don't have time to read our brochure? Here are some key facts.
+      </p>
+
+      <div id="scrolling-numbers">
+        <div class="grid-x center">
+          <div class="medium-4 cell">
+            <span class="block-span number count">500</span>
+            <h3 class="caps">CFO's and business leaders</h3>
+            <span class="block-span">From some of the region's largest and most influential companies.</span>
+          </div>
+          <div class="medium-4 cell">
+            <span class="number block-span count">48</span>
+            <h3 class="caps">Speakers</h3>
+            <span class="block-span">Experts, influencers, entrepreneurs, top CFO's and many more.</span>
+          </div>
+          <div class="medium-4 cell">
+            <span class="number block-span count">3</span>
+            <h3 class="caps">Tracks</h3>
+            <span class="block-span">Strategic leadership, financial management and the onslaught of technology.</span>
+          </div>
+        </div>
+        <div class="center">
+          <button class="button transparent"><span>Download our brochure</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light-blue-layer">
+  <h2>Who should attend?</h2>
+  <div class="content">
+    <p class="subheader center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+    <div class="grid-x grid-margin-x" id="who-attends">
+      <div class="large-4 cell">
+        <h3 class="list-header">CFO's</h3>
+        <ul>
+          <li>See the leading edge across our main themes of financial management, strategy and future trends.</li>
+          <li>Engage with your fellow financial leaders and establish new relations.</li>
+          <li>Connect with the region's leading service providers.</li>
+        </ul>
+      </div>
+      <div class="large-4 cell">
+        <h3 class="list-header">Financial Controllers & Executives</h3>
+        <ul>
+          <li>Accelerate your career by improving your core financial management skills.</li>
+          <li>Network with representatives from some of the region's largest companies.</li>
+          <li>Spot the trends that are sure to impact your job before it's too late.</li>
+        </ul>
+      </div>
+      <div class="large-4 cell">
+        <h3 class="list-header">Rising Students</h3>
+        <ul>
+          <li>Look beyond the school curriculum and learn about the real problems affecting companies today.</li>
+          <li>Explore future career opportunities.</li>
+          <li>Grow your professional network before graduating.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="center">
+      <a class="button" href="#tickets">Register now</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="subheaderless">A selection of our attendees</h2>
+  <div class="content">
+    <img src="{% static 'img/attendees.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!">
+    <div class="center">
+      <a class="button" href="#tickets">Register now</a>
+    </div>
+  </div>
+</section>
+
+<section class="blue-layer white-text">
+  <div id="speakers">
+    <h2 class="subheaderless">A selection of our speakers for 2018</h2>
+    <div class="content">
+      <div class="grid-x grid-margin-x center">
+        {% for speaker in featured_speakers %}
+        <div class="medium-3 cell">
+          <div class="card white-text">
+            <img class="speaker-featured-img" src="{{ speaker.photo.url }}">
+            <div class="card-section">
+              <h3>{{ speaker.name }}</h3>
+              <p class="subheader">{{ speaker.title }}, {{ speaker.company }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="center">
+        <a href="{% url 'speakers' %}" class="button transparent">Full speaker list</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light-blue-layer">
+  <h2>Interested in speaking at CFO Insights 2018?</h2>
+  <div class="content center">
+    <p class="subheader">More than 40 top executives, influencers and experts will be taking the stage at CFO Insights. Will you join them?</p>
+    <a href="mailto:abdulwaqi.rathore@cfoinsights.org?subject=CFO%20Insights%20Speaker%20Application&cc=andreas.broby@cfoinsights.org;patrick.larsen@cfoinsights.org" class="button contentless-button">Apply to speak</a>
+  </div>
+</section>
+
+<section id="agenda">
+  <h2>Main topics for CFO Insights 2018</h2>
+  <div class="content">
+    <p class="subheader">More than 40 speakers take to the stage to discuss the core issues you are facing.</p>
+    <div class="grid-x grid-margin-x">
+      <div class="large-4 cell">
+        <div class="agenda-wrapper">
+          <div class="agenda-header">
+            <h3>Strategy</h3>
+          </div>
+          <div class="agenda-body ">
+            <ul>
+              <li>Best practices in post-merger integration (PMI)</li>
+              <li>The modern CFO: how to go from a traditional CFO to a strategic executive</li>
+              <li>Employee Management: Attract the talent everyone else wants</li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+      <div class="large-4 cell">
+        <div class="agenda-wrapper">
+          <div class="agenda-header">
+            <h3>Financial Management</h3>
+          </div>
+          <div class="agenda-body">
+            <ul>
+              <li>How to unlock the value of your company’s data</li>
+              <li>Meet your new associate: Mr. Robot. How to accelerate the value of robotics process automation</li>
+              <li>The next frontier of FP&A</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="large-4 cell">
+        <div class="agenda-wrapper">
+          <div class="agenda-header">
+            <h3>Future Trends</h3>
+          </div>
+          <div class="agenda-body">
+            <ul>
+              <li>What is Artificial intelligence (AI) and how can you use it to leverage your data insights?</li>
+              <li>Blockchain: how this new technology can increase transparency and reduce costs</li>
+              <li>The next frontier of FP&A</li>
+            </ul>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="center">
+      <a href="{% url 'agenda' %}" class="button">See full agenda</a>
+    </div>
+  </div>
+</section>
+<section class="blue-layer">
+  <div id="tickets">
+    <div class="content content-buttonless">
+      <h2 class="subheaderless">Register now and secure your spot today</h2>
+      <div class="grid-x grid-margin-x">
+        <div class="large-4 cell">
+          <div class="ticket-wrapper">
+            <div class="ticket padded-content">
+              <div class="ticket-content">
+                <div class="ticket-table-wrapper">
+                  <div class="ticket-table">
+                    <h3 class="ticket-title">Student</h3>
+                    <span class="ticket-price">Invite Only</span>
+                  </div> 
+                </div>
+                <ul class="desktop-ticket">
+                  <li>Limited availability!</li>
+                  <li>Applications close May 1st.</li>
+                  <li>Full access to every CFO Insights keynote and panel.</li>
+                  <li>Full access to every networking event.</li>
+                </ul>
+                <ul class="accordion mobile-ticket" data-accordion data-allow-all-closed="true">
+                  <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">See details</a>
+                    <div class="accordion-content" data-tab-content >
+                      <ul>
+                        <li>Limited availability!</li>
+                        <li>Applications close May 1st.</li>
+                        <li>Full access to every CFO Insights keynote and panel.</li>
+                        <li>Full access to every networking event.</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <a href="https://goo.gl/forms/G0UKYAPR2zgtGoS53" class="button">Apply now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="large-4 cell">
+          <div class="ticket-wrapper">
+            <div class="ticket padded-content">
+              <div class="ticket-content">
+                <div class="ticket-table-wrapper">
+                  <div class="ticket-table">
+                    <h3 class="ticket-title">Early Bird</h3>
+                    <span class="ticket-price">1.599 DKK</span>
+                  </div>
+                </div>
+                <ul class="desktop-ticket">
+                  <li>Ex 25% VAT and 69 DKK ticket fee</li>
+                  <li>2.068 DKK including VAT and fee</li>
+                  <li>Limited availability!</li>
+                  <li>Sale ends February 31st 2018</li>
+                  <li>Full access to every CFO Insights keynote and panel</li>
+                  <li>Full access to every networking event</li>
+                </ul>
+                <ul class="accordion mobile-ticket" data-accordion data-allow-all-closed="true">
+                  <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">See details</a>
+                    <div class="accordion-content" data-tab-content >
+                      <ul>
+                        <li>Ex 25% VAT and 69 DKK ticket fee</li>
+                        <li>2.068 DKK including VAT and fee</li>
+                        <li>Limited availability!</li>
+                        <li>Sale ends February 31st 2018</li>
+                        <li>Full access to every CFO Insights keynote and panel</li>
+                        <li>Full access to every networking event</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <a href="https://billetto.dk/en/e/cfo-insights-2018-tickets-231231/select" class="button">Register now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="large-4 cell">
+          <div class="ticket-wrapper">
+            <div class="ticket padded-content">
+              <div class="ticket-content">
+                <div class="ticket-table-wrapper">
+                  <div class="ticket-table">
+                    <h3 class="ticket-title">Standard</h3>
+                    <span class="ticket-price">3.199 DKK</span>
+                  </div>
+                </div>
+                <ul class="desktop-ticket">
+                  <li>Ex 25% VAT and 69 DKK ticketing fee</li>
+                  <li>4.068 DKK including VAT and fee</li>
+                  <li>Limited availability!</li>
+                  <li>Full access to every CFO Insights keynote and panel</li>
+                  <li>Full access to every networking event</li>
+                </ul>
+                <ul class="accordion mobile-ticket" data-accordion data-allow-all-closed="true">
+                  <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">See details</a>
+                    <div class="accordion-content" data-tab-content >
+                      <ul>
+                        <li>Ex 25% VAT and 69 DKK ticketing fee</li>
+                        <li>4.068 DKK including VAT and fee</li>
+                        <li>Limited availability!</li>
+                        <li>Full access to every CFO Insights keynote and panel</li>
+                        <li>Full access to every networking event</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <a href="https://billetto.dk/en/e/cfo-insights-2018-tickets-231231/select" class="button">Register now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light-blue-layer" id="sponsors">
+  <div class="content">
+    <h2>Our sponsors</h2>
+    <p class="subheader">CFO Insights wouldn't have been possible without the support of our sponsors and partners.</p>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-3 cell">
+        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
+      </div>
+      <div class="medium-3 cell">
+        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
+      </div>
+      <div class="medium-3 cell">
+        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
+      </div>
+      <div class="medium-3 cell">
+        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
+      </div>
+    </div>
+    <div class="center">
+      <a class="button" href="{% url 'sponsors' %}">See all 2018 sponsors</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="about">
+  <div class="content">
+    <h2>Who are CFO Insights?</h2>
+    <p class="subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+    <div class="grid-x grid-margin-x">
+      <div class="large-6 cell">
+        <img src="{% static 'img/team.JPG' %}" alt="The taem behind CFO Insights is made up of 20 students.">
+      </div>
+      <div class="large-6 cell">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+    <div class="center">
+      <a class="button button-disabled" href="#">Broby is uploading your bios <3</a>
+    </div>
+  </div>
+</section>
+
+<section class="blue-layer">
+  <div id="newsletter">
+    <div class="content">
+      <h2>Become an insider</h2>
+      <p class="subheader">Get the latest updates on CFO Insights 2018.</p>
+      <form class="center">
+        <input type="text" placeholder="Enter your e-mail">
+        <input type="submit" name="submit" class="button" value="Subscribe now">
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

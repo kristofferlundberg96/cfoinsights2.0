@@ -1,0 +1,67 @@
+.speaker-card img, .hover-overlay-large {
+    width: 302.5px;
+    height: 302.5px;
+}
+
+.hover-overlay-large {
+    margin-top: -302.5px;
+    width: 100%;
+}
+
+.card-section {
+    padding-top: 0px !important;
+}
+
+.button {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.orbit-slide img, .hover-overlay {
+    height: 191.66px;
+}
+
+.hover-overlay {
+    margin-top: -191.66px;
+}
+
+.carousel-subheader {
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+#orbit a.card:hover p.carousel-subheader {
+    color: rgb(118, 178, 209) !important;
+}
+
+a.card:hover .hover-overlay, a.card:hover .hover-overlay-large {
+    background-color: rgba(118, 178, 209, 0.5) !important;
+}
+
+div.orbit:focus, .orbit-wrapper:focus, .orbit-container:focus {
+    outline: none !important;
+}
+
+.speaker-detail-subheader {
+    margin-bottom: 0px !important;
+}
+
+.speaker_company_logo {
+    display: block !important;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.speaker-portrait {
+    width: 295px;
+    height: 295px;
+}
+
+.speaker-cv-list-no-margin ul {
+    margin-left: 0px !important;
+}
+
+.speaker-cv-list-no-margin ul li:first-child {
+    margin-top: 0px;
+}

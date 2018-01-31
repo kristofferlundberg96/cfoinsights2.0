@@ -1,0 +1,67 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'sponsors/style.css' %}">
+{% endblock %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}#agenda">Agenda</a></li>
+        <li><a href="{% url 'index' %}#speakers">Speakers</a></li>
+        <li><a class="active" href="{% url 'index' %}#sponsors">Sponsors</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
+{% block content %}
+<section class="subpage-hero" id="speakers-hero">
+  <div class="content">
+    <h1 class="subpage-header">Sponsors</h1>
+    <p class="subheader">CFO Insights would not exist without the support of our sponsors and partners. A big thank you for making this possible.</p>
+  </div>
+</section>
+
+<section class="sponsor-cta">
+  <h2 class="styleless-header">Interested in partnering up?</h2>
+  <div class="center">
+    <a class="button" href="mailto:kristoffer.lundberg@cfoinsights.org?subject=CFO%20Insights%20Sponsor%20Application">Let us know!</a>
+  </div>
+</section>
+
+<section class="content sponsors">
+  {% for category, details in sponsors.items %}
+  <h2>
+    <span class="header-overlay">{{ category }}</span>
+  </h2>
+  <div class="content center">
+      <div class="grid-x grid-margin-x">
+        {% for sponsor in details.sponsors %}
+          <div class="medium-{{ details.colw }} cell sponsor-cell">
+            <img src="{{ sponsor.company_logo.url }}"/>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
