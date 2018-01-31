@@ -72,11 +72,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-if DEBUG:
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'cfoinsights', 'static'),
-        os.path.join(BASE_DIR, "project/static"),
-    )
 SITE_ID = 1
 
 
@@ -196,16 +191,9 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cfoinsights',
-        'USER': 'admin',
-        'PASSWORD': 'nissemand95',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 MIGRATION_MODULES = {
     
@@ -217,3 +205,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+    from settings_dev import *
