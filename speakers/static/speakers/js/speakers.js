@@ -7,12 +7,16 @@ $(function() {
 
     $('.speaker-category :checkbox').click(function() {
         $('input:checkbox:not(:checked)').each(function() {
-            $('div[data-category' + '*="' + $(this).val() + '"]').hide();
+            var categories = $(this).val().split(' ');
+            $.each(categories, function(index, value) {
+                $('div[data-category' + '*="' + value + '"]').hide();
+            });
         });
         $('input[type="checkbox"]:checked').each(function() {
-            console.log($(this).val());
-            $('div[data-category' + '*="' + $(this).val() + '"]').show();
+            var categories = $(this).val().split(' ');
+            $.each(categories, function(index, value) {
+                $('div[data-category' + '*="' + value + '"]').show();
+            });
         });
-
     });
 });

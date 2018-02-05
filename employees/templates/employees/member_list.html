@@ -53,7 +53,7 @@ CFO Insights - Team
       {% for employee in employees %}
       <div class="large-3 medium-6 small-12 cell">
         <a class="card member-card" href="{% url 'employee_detail' slug=employee.slug %}">
-          <div class="card-image">
+          <div class="card-image employee-card-image">
             <img src="{{ employee.photo.url }}">
           </div>
           <div class="card-divider member-title">

@@ -69,3 +69,14 @@ $(document).on('click', '.menu a', function(event) {
         $('#top-menu').css({"display": "none"});
     }
 });
+
+var isOpeningMenu = true;
+
+$(document).on('click', 'button.menu-icon', function(event) {
+    if (isOpeningMenu) {
+        $('.header').css('background-color', 'rgb(0, 49, 65)');
+    } else {
+        $('.header').removeAttr('style');
+    }
+    isOpeningMenu = !isOpeningMenu
+});

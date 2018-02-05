@@ -1,6 +1,10 @@
 {% extends 'bases/base.html' %}
 {% load static %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'employees/styles.css' %}">
+{% endblock %}
+
 {% block header %}
 <div class="header">
   <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
@@ -57,7 +61,7 @@ CFO Insights - Team - {{ employee.name }}
           <h2 class="styleless-header">{{ employee.name }}</h2>
           <p class="subheader">{{ employee.title }}</p>
           <ul class="bulletless fa-ul member-details-subpage">
-            <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">Porcelænshaven 26<br>Copenhagen</span></li>
+            <li><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">{{ employee.address }}<br>{{ employee.city }}</span></li>
             {% if employee.mail %}
             <li><a href="mailto:{{ employee.mail }}"><span class="fa-li"><i class="fas fa-at"></i></span><span class="member-push-right">{{ employee.mail }}</span></a></li>
             {% endif %}
@@ -68,7 +72,7 @@ CFO Insights - Team - {{ employee.name }}
           </ul>
         </div>
       </div>
-      <div class="large-6 cell dark-blue-layer member-info-wrapper">
+      <div class="large-6 medium-12 cell dark-blue-layer member-info-wrapper">
         <ul class="bulletless margin-center cv-list">
           <li class="cv-section">
             <div class="cv-content">
@@ -84,7 +88,7 @@ CFO Insights - Team - {{ employee.name }}
           </li>
         </ul>
       </div>
-      <div class="large-6 cell member-info-wrapper">
+      <div class="large-6 medium-12 scell member-info-wrapper employee-bio">
         <div class="member-info-square margin-center">
           <h2>{{ name }} is</h2>
           <p class="member-bio">{{ employee.bio }}</p>

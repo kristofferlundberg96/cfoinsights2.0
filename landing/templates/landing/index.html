@@ -61,22 +61,16 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
     We're putting new tires on the racing cars of CFOs
   </h2>
   <div class="content">
-    <div class="grid-x grid-margin-x">
-      <div class="large-6 cell">
-        <img src="{% static 'img/placeholder_vid.png' %}">
-      </div>
-      <div class="large-6 cell">
-        <h3>The largest CFO conference and the go-to place for CFOs in Scandinavia</h3>
-        <p class="subheader">By students, for professionals.</p>
-        <p>
-        The role of the CFO is currently undergoing a transformative change. Technology continues to crawl into every aspect of business, CEOs are calling for strategic advisors and markets are more volatile and unpredictable than ever.</p>
-        <p>That's why we've invited 40+ of the region's biggest CFOs, recognised experts and thought leaders to prepare you for what the future of the CFO holds.</p>
-      </div>
-    </div>
-    <div class="center">
-      <a class="button" href="#tickets">Register now</a>
-    </div>
+    <h3>The largest CFO conference and the go-to place for CFOs in Scandinavia</h3>
+    <p class="subheader">By students, for professionals.</p>
+    <p>
+    The role of the CFO is currently undergoing a transformative change. Technology continues to crawl into every aspect of business, CEOs are calling for strategic advisors and markets are more volatile and unpredictable than ever.</p>
+    <p>That's why we've invited 40+ of the region's biggest CFOs, recognised experts and thought leaders to prepare you for what the future of the CFO holds.</p>
   </div>
+  <div class="center">
+    <a class="button" href="#tickets">Register now</a>
+  </div>
+</div>
 </section>
 
 <section class="white-text blue-layer">
@@ -93,7 +87,7 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
         <div class="grid-x center">
           <div class="medium-4 cell">
             <span class="block-span number count">500</span>
-            <h3 class="caps">CFO's and business leaders</h3>
+            <h3 class="caps">CFO's and Executives</h3>
             <span class="block-span">From some of the region's largest and most influential companies.</span>
           </div>
           <div class="medium-4 cell">
@@ -122,15 +116,15 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
     <div class="grid-x grid-margin-x" id="who-attends">
       <div class="large-4 cell">
         <h3 class="list-header">CFO's</h3>
-        <ul>
+        <ul class="who-list">
           <li>See the leading edge across our main themes of financial management, strategy and future trends.</li>
           <li>Engage with your fellow financial leaders and establish new relations.</li>
           <li>Connect with the region's leading service providers.</li>
         </ul>
       </div>
       <div class="large-4 cell">
-        <h3 class="list-header">Financial Controllers & Executives</h3>
-        <ul>
+        <h3 class="list-header">Financial Executives</h3>
+        <ul class="who-list">
           <li>Accelerate your career by improving your core financial management skills.</li>
           <li>Network with representatives from some of the region's largest companies.</li>
           <li>Spot the trends that are sure to impact your job before it's too late.</li>
@@ -138,8 +132,8 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
       </div>
       <div class="large-4 cell">
         <h3 class="list-header">Rising Students</h3>
-        <ul>
-          <li>Look beyond the school curriculum and learn about the real problems affecting companies today.</li>
+        <ul class="who-list">
+          <li>Go above and beyond the curriculum by learning about real problems from the real world.</li>
           <li>Explore future career opportunities.</li>
           <li>Grow your professional network before graduating.</li>
         </ul>
@@ -151,10 +145,11 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
   </div>
 </section>
 
-<section>
+<section id="attendees">
   <h2 class="subheaderless">A selection of our attendees</h2>
   <div class="content">
-    <img src="{% static 'img/attendees.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!">
+    <img src="{% static 'img/attendees_horizontal.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!" id="attendees_horizontal">
+    <img src="{% static 'img/attendees_vertical.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!" id="attendees_vertical">
     <div class="center">
       <a class="button" href="#tickets">Register now</a>
     </div>
@@ -168,13 +163,16 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
       <div class="grid-x grid-margin-x center">
         {% for speaker in featured_speakers %}
         <div class="medium-3 small-6 cell">
-          <div class="card white-text">
-            <img class="speaker-featured-img" src="{{ speaker.photo.url }}">
+          <a href="{% url 'speaker_detail' slug=speaker.slug %}" class="card white-text">
+            <img class="speaker-img" src="{{ speaker.photo.url }}">
+            <div class="hover-overlay-large"></div>
             <div class="card-section">
-              <h3>{{ speaker.name }}</h3>
-              <p class="subheader">{{ speaker.title }}, {{ speaker.company }}</p>
+              <div class="speaker-card-name-wrapper">
+                <h3>{{ speaker.name }}</h3>
+              </div>
+              <p class="subheader speaker-subheader">{{ speaker.title }}, {{ speaker.company }}</p>
             </div>
-          </div>
+          </a>
         </div>
         {% endfor %}
       </div>
@@ -206,7 +204,7 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
           <div class="agenda-body ">
             <ul>
               {% for panel in strategy_panels %}
-                <li>{{ panel.name }}</li>
+              <li>{{ panel.name }}</li>
               {% endfor %}
             </ul>
           </div>
@@ -220,7 +218,7 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
           <div class="agenda-body">
             <ul>
               {% for panel in finance_panels %}
-                <li>{{ panel.name }}</li>
+              <li>{{ panel.name }}</li>
               {% endfor %}
             </ul>
           </div>
@@ -234,7 +232,7 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
           <div class="agenda-body">
             <ul>
               {% for panel in future_panels %}
-                <li>{{ panel.name }}</li>
+              <li>{{ panel.name }}</li>
               {% endfor %}
             </ul>
           </div>
@@ -366,21 +364,14 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
 
 <section class="light-blue-layer" id="sponsors">
   <div class="content">
-    <h2>Our sponsors</h2>
+    <h2>A selection of sponsors</h2>
     <p class="subheader">CFO Insights wouldn't have been possible without the support of our sponsors and partners.</p>
     <div class="grid-x grid-margin-x">
-      <div class="medium-3 cell">
-        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
-      </div>
-      <div class="medium-3 cell">
-        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
-      </div>
-      <div class="medium-3 cell">
-        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
-      </div>
-      <div class="medium-3 cell">
-        <img src="{% static 'img/ey.png' %}" class="float-center" alt="EY">
-      </div>
+      {% for sponsor in featured_sponsors %}
+        <div class="medium-3 small-6 cell">
+          <img src="{{ sponsor.company_logo.url }}" class="float-center" alt="{{ sponsor.name }}">
+        </div>
+      {% endfor %}
     </div>
     <div class="center">
       <a class="button" href="{% url 'sponsors' %}">See all 2018 sponsors</a>

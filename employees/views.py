@@ -8,6 +8,7 @@ class MembersView(ListView):
     model = Employee
     context_object_name = "employees"
     template_name = "employees/member_list.html"
+    ordering = ['name']
 
 class MemberDetailView(DetailView):
     model = Employee

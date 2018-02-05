@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'speakers.apps.SpeakersConfig',
     'sponsors.apps.SponsorsConfig',
     'employees.apps.EmployeesConfig',
+    'survey.apps.SurveyConfig',
 
     'tinymce',
     'djangocms_admin_style',

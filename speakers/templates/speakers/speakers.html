@@ -56,22 +56,28 @@ CFO Insights - Speakers
   <section class="content">
     <h2 class="subheaderless">Select a category</h2>
     <div class="grid-x grid-margin-x speaker-category">
-      <fieldset class="medium-4 cell center">
+      <fieldset class="small-6 medium-6 large-3 cell center">
+        <input id="keynote" type="checkbox" class="speaker-filter-checkbox" checked="checked" value="3 4 5">
+        <label for="keynote" class="button speaker-filter-button">
+          <span class="filter-label">Keynote</span>
+        </label>
+      </fieldset>
+      <fieldset class="small-6 medium-6 large-3 cell center">
         <input id="strategy" type="checkbox" class="speaker-filter-checkbox" checked="checked" value="0">
         <label for="strategy" class="button speaker-filter-button">
-          Strategy
+          <span class="filter-label">Strategy</span>
         </label>
       </fieldset>
-      <fieldset class="medium-4 cell center">
+      <fieldset class="small-6 medium-6 large-3 cell center">
         <input id="financial-management" type="checkbox" class="speaker-filter-checkbox" checked="checked" value="1">
         <label for="financial-management" class="button speaker-filter-button">
-          Financial Management
+          <span class="filter-label">Financial Management</span>
         </label>
       </fieldset>
-      <fieldset class="medium-4 cell center">
+      <fieldset class="small-6 medium-6 large-3 cell center">
         <input id="future-trends" type="checkbox" class="speaker-filter-checkbox" checked="checked" value="2">
         <label for="future-trends" class="button speaker-filter-button">
-          Future Trends
+          <span class="filter-label">Future Trends</span>
         </label>
       </fieldset>
     </div>
@@ -81,13 +87,15 @@ CFO Insights - Speakers
     <div class="content center">
       <div class="grid-x grid-margin-x">
           {% for speaker in speakers_list %}
-            <div class="large-3 medium-6 cell speaker-cell" data-category="{% for panel in speaker.panels.all %}{{ panel.category }} {% endfor %}">
+            <div class="large-3 medium-6 cell small-6 speaker-cell" data-category="{% for panel in speaker.panels.all %}{{ panel.category }} {% endfor %}">
               <a href="{% url 'speaker_detail' slug=speaker.slug %}" class="card speaker-card">
-                <img src="{{ speaker.photo.url }}">
+                <img src="{{ speaker.photo.url }}" class="speaker-img">
                 <div class="hover-overlay-large"></div>
                 <div class="card-section">
-                  <h3>{{ speaker.name }}</h3>
-                  <p class="subheader">{{ speaker.title }}, {{ speaker.company }}</p>
+                  <div class="speaker-card-name-wrapper">
+                    <h3>{{ speaker.name }}</h3>
+                  </div>
+                  <p class="subheader speaker-subheader">{{ speaker.title }}, {{ speaker.company }}</p>
                 </div>
               </a>
             </div>          

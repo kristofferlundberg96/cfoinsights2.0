@@ -31,6 +31,8 @@ class Employee(models.Model):
     photo = models.ImageField(upload_to='members')
     email = models.TextField(blank=True, null=True)
     phone_number = models.TextField(blank=True, null=True)
+    address = models.TextField()
+    city = models.TextField()
 
     def save(self, *args, **kwargs):
         if not self.id:

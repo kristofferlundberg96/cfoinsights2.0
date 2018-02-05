@@ -1,4 +1,4 @@
-body {
+  body {
   overflow: hidden !important;
 }
 
@@ -6,7 +6,7 @@ body {
   display: none;
 }
 
-.speaker-featured-img {
+.speaker-img {
   width: 302.5px !important;
   height: 302.5px !important;
 }
@@ -39,14 +39,29 @@ html {
   text-align: center;
   height: 80vh;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media screen and (max-width: 1023px) {
   .hero h1 {
     font-size: 40px;
+  }
+
+  #attendees_vertical {
+    display: block;
+  }
+  #attendees_horizontal {
+    display: none;
   }
 
   .hero .subheader {
@@ -210,6 +225,7 @@ h2.subheaderless {
   width: 0;
   height: 1.5px;
   background: rgb(118, 178, 209);
+  -webkit-transition: width .3s;
   transition: width .3s;
   position: relative;
   top: 8px;
@@ -221,6 +237,7 @@ h2.subheaderless {
 
 .menu li a:hover::after {
   width: 100%;
+  -webkit-transition: width .3s;
   transition: width .3s;
 }
 
@@ -260,14 +277,16 @@ h2.subheaderless {
   margin-right: auto;
 }
 
-.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out; margin}
+.headroom {position: fixed;top: 0;left: 0;right: 0;-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out; margin}
 .headroom--unpinned {top: -100px;}
 .headroom--pinned {top: 0;}
-.headroom--top {
-  background-color: transparent !important;
-}
+
 .headroom--not-top {
   background-color: rgb(0, 49, 65);
+}
+
+.headroom--top {
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -287,14 +306,9 @@ h2.subheaderless {
     font-size: 14px !important;
   }
 
-  .speaker-featured-img {
+  .speaker-img {
     width: 215px !important;
     height: 215px !important;
-  }
-
-  .speaker-filter-button {
-    width: 300px !important;
-    font-size: 18px;
   }
 
   .agenda-wrapper {
@@ -316,13 +330,8 @@ h2.subheaderless {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 1024px) {
-  .top-bar {
-    display: block;
-    background-color: 
-  }
-
-  .speaker-featured-img {
+@media only screen and (max-width: 1023px) {
+  .speaker-img {
     width: 169.5px !important;
     height: 169.5px !important;
   }
@@ -330,6 +339,12 @@ h2.subheaderless {
   #desktop-logo {
     display: none;
   }
+
+
+  .logo {
+    width: initial;
+  }
+
   .menu li {
     padding-left: 0px;
   }
@@ -352,15 +367,6 @@ h2.subheaderless {
     width: 525px !important;
     left: -12.5px !important;
   }
-
-  .speaker-filter-button {
-    width: 200px !important;
-    font-size: 12px;
-  }
-
-  .header {
-    background-color: rgb(0, 49, 65) !important;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -371,7 +377,7 @@ h2.subheaderless {
     height: 280px !important;
   }
 
-  .speaker-featured-img {
+  .speaker-img {
     width: 127.500px !important;
     height: 127.500px !important;
   }
@@ -413,14 +419,6 @@ h2.subheaderless {
 
   h2.subheaderless {
     margin-bottom: 20px;
-  }
-
-  .speaker-category fieldset {
-    margin-top: 20px !important;
-  }
-
-  .speaker-category fieldset:first-child {
-    margin-top: 0px !important;
   }
 }
 
@@ -507,10 +505,6 @@ h2.subheaderless {
 
   .member-bio {
     margin-top: 0px !important;
-  }
-
-  .member-info-square {
-    margin-top: 40px !important;
   }
 
   .e-mail-input {
@@ -619,17 +613,12 @@ h3.list-header::after {
   margin-right: auto;
 }
 
-#who-attends li {
-  display: table;
-  margin: 20px 0 20px 0;
-}
-
 .light-blue-layer {
   background-color: rgb(236, 249, 255) !important;
 }
 
 .white-text {
-  color: white !important;
+  color: white;
 }
 
 .card {
@@ -806,8 +795,6 @@ input[type="text"] {
 
 .padded-content {
   padding: 5% 10% 0% 10% !important;
-  -moz-border-radius: 0px;
-  -webkit-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px; 
 }
 
@@ -911,16 +898,6 @@ h2, .h2 {
   font-size: 2rem;
   font-weight: normal;
   padding-bottom: 20px;
-}
-
-.button.speaker-filter-button {
-  width: 400px;
-
-  background-color: transparent;
-  border-color: black;
-  border-radius: 3px;
-  border-width: 1px;
-  color: black;
 }
 
 .sessions-header {
@@ -1085,20 +1062,6 @@ h2, .h2 {
   height: 90px;
 }
 
-.panelist-slug {
-  width: 90px;
-  height: auto;
-  word-wrap: break-word;
-}
-
-.panelist-slug p {
-  text-align: center;
-}
-
-.panelist-slug {
-  display: inline-block;
-}
-
 .panel-title {
   background-color: #003142;
   color: white;
@@ -1198,8 +1161,12 @@ h2, .h2 {
 }
 
 .member-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .member-info .svg-inline--fa {
@@ -1329,9 +1296,15 @@ h2, .h2 {
 }
 
 .hero .layer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hero-content .button {
@@ -1363,4 +1336,90 @@ a:hover, a:focus {
   .hero-content {
     padding-top: 76.88px !important;
   }
+  #attendees_horizontal {
+    display: block;
+  }
+
+  #attendees_vertical {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1301px) {
+  .who-list li {
+    height: 50px !important;
+  }
+}
+
+.who-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+a.card:hover .hover-overlay, a.card:hover .hover-overlay-large {
+    background-color: rgba(118, 178, 209, 0.5) !important;
+}
+
+a.card:hover p.speaker-subheader {
+    color: rgb(118, 178, 209) !important;
+}
+
+.speaker-card img, .hover-overlay-large {
+    width: 302.5px;
+    height: 302.5px;
+}
+
+.hover-overlay-large {
+    margin-top: -302.5px;
+    width: 100%;
+}
+
+.speaker-card-name-wrapper {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.speaker-card-name-wrapper h3 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.speaker-card-name-wrapper h3::after {
+  display: none;
+}
+
+
+.speaker-card-name-wrapper::after {
+  display: block;
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: black;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(118, 178, 209);
+}
+
+.speaker-subheader {
+  margin-top: 20px !important;
+}
+
+#attendees h3 {
+  margin-bottom: 0px;
 }

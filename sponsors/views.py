@@ -18,15 +18,21 @@ class SponsorsView(ListView):
         sponsors_by_category = {}
         categories = dict(CATEGORY_CHOICES)
         for n in categories:
-            sponsors = sponsors.filter(category=n)
-            if not sponsors:
+            filtered_sponsors = sponsors.filter(category=n)
+
+            if not filtered_sponsors:
                 continue
-            colw = floor(12 / sponsors.count())
+
+            if filtered_sponsors.count() > 6:
+                colw = 2
+            else:
+                colw = floor(12 / filtered_sponsors.count())
+
             label = categories[n]
 
             sponsors_by_category[label] = {
                 'colw': colw,
-                'sponsors': sponsors,
+                'sponsors': filtered_sponsors,
             }
 
         context['sponsors'] = sponsors_by_category
