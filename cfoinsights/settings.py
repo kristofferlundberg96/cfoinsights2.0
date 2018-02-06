@@ -238,7 +238,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME  
 STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
-AWS_IS_GZIPPED = True
 
 
 if os.environ.get('DEVELOPMENT') is not None:
