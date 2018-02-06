@@ -1432,3 +1432,9 @@ a.card:hover p.speaker-subheader {
 p {
   font-size: 20px;
 }
+
+.sponsor-landing-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
