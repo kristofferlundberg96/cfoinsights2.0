@@ -68,9 +68,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+#MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -228,16 +228,17 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-#AWS_ACCESS_KEY_ID = "AKIAI4FEY75KSSZLF65A"
-#AWS_SECRET_ACCESS_KEY = "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"
-#AWS_STORAGE_BUCKET_NAME = "cfoinsights"
+AWS_ACCESS_KEY_ID = "AKIAI4FEY75KSSZLF65A"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "cfoinsights"
 
-#DEFAULT_FILE_STORAGE = 'cfoinsights.storage_backends.MediaStorage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'cfoinsights.storage_backends.MediaStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-#AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME  
-#STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
+AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME  
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
+AWS_IS_GZIPPED = True
 
 
 if os.environ.get('DEVELOPMENT') is not None:
