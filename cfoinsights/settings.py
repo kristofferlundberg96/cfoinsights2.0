@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'employees.apps.EmployeesConfig',
     'survey.apps.SurveyConfig',
 
+    'storages',
     'tinymce',
     'djangocms_admin_style',
     'django.contrib.auth',
