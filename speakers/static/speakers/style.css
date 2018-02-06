@@ -7,11 +7,15 @@
     margin-bottom: 0px;
 }
 
-.orbit-slide img, .hover-overlay {
+.loading-placeholder {
+    background-color: black;
+}
+
+.orbit-slide img, .hover-overlay, .loading-placeholder {
     height: 191.66px;
 }
 
-.hover-overlay {
+.hover-overlay, .loading-placeholder {
     margin-top: -191.66px;
 }
 
@@ -113,5 +117,106 @@ div.orbit:focus, .orbit-wrapper:focus, .orbit-container:focus {
 @media only screen and (max-width: 480px) {
     .button.speaker-filter-button {
         width: 100%;
+    }
+}
+
+
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #6ba9cb;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+.orbit-container {
+    min-height: 330.656px;
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .speaker-orbit-img, .hover-overlay {
+        width: 133px !important;
+        height: 133px !important;
+    }
+
+    .hover-overlay {
+        margin-top: -133px !important;
+    }
+
+    .speaker-portrait {
+        width: 207.5px;
+        height: 207.5px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .speaker-orbit-img, .hover-overlay {
+        width: 103px !important;
+        height: 103px !important;
+    }
+
+    .hover-overlay {
+        margin-top: -103px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .speaker-orbit-img, .hover-overlay {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .hover-overlay {
+        margin-top: -75px !important;
+    }
+
+    .carousel-header {
+        font-size: 10px !important;
     }
 }

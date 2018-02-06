@@ -1,3 +1,6 @@
+$('.orbit-wrapper').hide();
+
+
 $(function() {
     var filtered_categories = [];
 
@@ -20,3 +23,8 @@ $(function() {
         });
     });
 });
+
+$(window).on('load', function() {
+    $('.orbit-wrapper').show();
+    $('.spinner').hide();
+})

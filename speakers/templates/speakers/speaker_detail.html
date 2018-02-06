@@ -66,7 +66,7 @@ CFO Insights - Speakers - {{ speaker.name }}
           {% endif %}
           <ul class="left-aligned">
             {% for panel in speaker.panels.all %}
-            <li class="bulletless"><a href="{% url 'agenda' %}#{{panel.pk}}">{{ panel.name }}</a></li>
+              <li class="bulletless"><a href="{% url 'agenda' %}#{{panel.pk}}">{{ panel.name }}</a></li>
             {% endfor %}
           </ul>
         </div>
@@ -99,13 +99,19 @@ CFO Insights - Speakers - {{ speaker.name }}
 
   <section class="content speaker-info ">
     <h3>You might also be interested in checking out some of these speakers</h3>
-    <div class="orbit speaker-carousel" role="region" aria-label="Recommended Speakers" data-orbit>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+    <div class="orbit speaker-carousel" role="region" aria-label="Recommended Speakers" data-orbit data-auto-play="false">
       <div class="orbit-wrapper">
         <div class="orbit-controls">
           <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
           <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
         </div>
-
         <ul class="orbit-container" id="orbit">
           {% for recommendation_list in recommendations %}
           <li class="{% if forloop.first %}is-active{%endif%} orbit-slide">
@@ -113,7 +119,7 @@ CFO Insights - Speakers - {{ speaker.name }}
               {% for recommended_speaker in recommendation_list %}
               <div class="medium-2 cell">
                 <a class="card" href="{% url 'speaker_detail' slug=recommended_speaker.slug %}"">
-                  <img src="{{ recommended_speaker.photo.url }}">
+                  <img src="{{ recommended_speaker.photo.url }}" class="speaker-orbit-img">
                   <div class="hover-overlay"></div>
                   <div class="card-section">
                     <h3 class="carousel-header">{{ recommended_speaker.name }}</h3>

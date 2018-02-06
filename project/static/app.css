@@ -787,6 +787,12 @@ input[type="text"] {
   margin-top: 1rem;
 }
 
+@media only screen and (max-width: 1232px) {
+  .footer p {
+    font-size: 10px;
+  }
+}
+
 .cell img {
   margin-left: auto;
   margin-right: auto;
