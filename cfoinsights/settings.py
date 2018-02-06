@@ -227,7 +227,13 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+AWS_ACCESS_KEY_ID = "AKIAI4FEY75KSSZLF65A"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "cfoinsights"
+AWS_S3_CUSTOM_DOMAIN = 'cdn.cfoinsights.org'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 if os.environ.get('DEVELOPMENT') is not None:
     from .settings_dev import *

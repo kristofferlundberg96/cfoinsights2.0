@@ -27,6 +27,7 @@
 
 .speaker-name {
   height: 75px;
+  font-weight: 16px;
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
