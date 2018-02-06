@@ -26,6 +26,7 @@ urlpatterns += (
     url(r'^speakers/', include('speakers.urls')),
     url(r'^sponsors/', include('sponsors.urls')),
     url(r'^team/', include('employees.urls')),
+    url(r'^survey/', include('survey.urls', namespace='survey')),
 
     url(r'^cms', include('cms.urls')),
 )

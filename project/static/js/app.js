@@ -42,7 +42,7 @@ function scrollToAnchor(e) {
 
     if (document.documentElement.scrollTop > $(target).position().top) {
         $('html, body').animate({
-            scrollTop: $(target).offset().top - $('.header').height()
+            scrollTop: $(target).offset().top - ($('.header').height() - 1)
         }, 1000);
     } else {
         $('html, body').animate({

@@ -364,12 +364,12 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
 
 <section class="light-blue-layer" id="sponsors">
   <div class="content">
-    <h2>A selection of sponsors</h2>
+    <h2>A selection of sponsors and partners</h2>
     <p class="subheader">CFO Insights wouldn't have been possible without the support of our sponsors and partners.</p>
     <div class="grid-x grid-margin-x">
       {% for sponsor in featured_sponsors %}
         <div class="medium-3 small-6 cell">
-          <img src="{{ sponsor.company_logo.url }}" class="float-center" alt="{{ sponsor.name }}">
+          <img src="{{ sponsor.company_logo.url }}" class="float-center sponsor-logo" alt="{{ sponsor.name }}">
         </div>
       {% endfor %}
     </div>
@@ -385,7 +385,7 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
     <h2 class="subheaderless">Who are CFO Insights?</h2>
     <div class="grid-x grid-margin-x">
       <div class="large-6 cell">
-        <img src="{% static 'img/team.jpg' %}" alt="The taem behind CFO Insights is made up of 20 students.">
+        <img src="{% static 'img/team.jpg' %}" alt="The team behind CFO Insights is made up of 20 students.">
       </div>
       <div class="large-6 cell">
         <h3>The who, the why, the what.</h3>
@@ -404,8 +404,8 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
     <div class="content">
       <h2>Become an insider</h2>
       <p class="subheader">Get the latest updates on CFO Insights 2018.</p>
-      <form class="center">
-        <input class="e-mail-input" type="text" placeholder="Enter your e-mail">
+      <form class="center" action="https://cfoinsights.createsend.com/t/j/s/ehjykd/" method="post">
+        <input class="e-mail-input" type="text" placeholder="Enter your e-mail" name="cm-ehjykd-ehjykd" type="email">
         <input type="submit" name="submit" class="button" value="Subscribe now">
       </form>
     </div>

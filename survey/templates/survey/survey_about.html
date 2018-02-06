@@ -1,0 +1,66 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block title %} CFO Insights 2018 International Survey {% endblock %}
+
+{% block header %}
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <div class="title-bar-title">
+        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
+      </div>
+    </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left" id="desktop-logo">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical large-horizontal menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}#agenda">Agenda</a></li>
+        <li><a href="{% url 'index' %}#speakers">Speakers</a></li>
+        <li><a href="{% url 'index' %}#sponsors">Sponsors</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#tickets">Register now</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'survey/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="survey-wrapper" id="survey-about">
+  <div class="content">
+    <div class="survey-content-bg">
+        <h1>About this survey</h1>
+        <p>CFO Insights was established by Danish students from Copenhagen Business School to address the radical transformation currently facing the role of the CFO. Our mission is to arm the region's CFOs for the future and offer them a peak through the looking glass at what the future holds.</p>
+        <p>We arrange the yearly CFO Insights conference based in Copenhagen with the region's leading service providers, 48 speakers, 9 panel debates and 500 executives, entrepreneurs and experts.</p>
+        <span class="divider"></span>
+        <p>The purpose of this survey is to go beyond the borders of Scandinavia and look at what threats and challenges companies worldwide are currently facing. The survey results will be used internally for product development and be made publicly available on our website.</p>
+        <p>All submissions are completely anonymous.</p>
+        <span class="divider"></span>
+        <p>From all of us at CFO Insights, we hope you'll spend 5 minutes to complete our questions and as a reward, you'll unlock discounted tickets for our conference on May 25th.</p>
+    </div>
+    <div class="center">
+        <a href="{% url 'survey:questions' %}" class="button">Begin survey!</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'survey/js/survey.js' %}"></script>
+<script type="text/javascript" src="{% static 'survey/js/reveal.js' %}"></script>
+<script>
+  Reveal.initialize();
+</script>
+{% endblock %}

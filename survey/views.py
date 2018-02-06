@@ -3,5 +3,10 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class SurveyTemplateView(TemplateView):
-    context_object_name = 'speakers_list'
-    template_name = "speakers/speakers.html"
+    template_name = "survey/survey.html"
+
+class SurveyAboutView(TemplateView):
+    template_name = "survey/survey_about.html"
+
+class SurveyQuestionsView(TemplateView):
+    template_name = "survey/survey_questions.html"
