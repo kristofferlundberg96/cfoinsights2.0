@@ -117,7 +117,7 @@ CFO Insights - Speakers - {{ speaker.name }}
           <li class="{% if forloop.first %}is-active{%endif%} orbit-slide">
             <div class="grid-x grid-margin-x center">
               {% for recommended_speaker in recommendation_list %}
-              <div class="medium-2 cell">
+              <div class="medium-2 small-6 cell">
                 <a class="card" href="{% url 'speaker_detail' slug=recommended_speaker.slug %}"">
                   <img src="{{ recommended_speaker.photo.url }}" class="speaker-orbit-img">
                   <div class="hover-overlay"></div>

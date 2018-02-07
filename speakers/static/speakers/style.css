@@ -11,8 +11,9 @@
     background-color: black;
 }
 
-.orbit-slide img, .hover-overlay, .loading-placeholder {
+.orbit-slide img, .hover-overlay {
     height: 191.66px;
+    width: 191.66px;
 }
 
 .hover-overlay, .loading-placeholder {
@@ -105,6 +106,10 @@ div.orbit:focus, .orbit-wrapper:focus, .orbit-container:focus {
     .button.speaker-filter-button {
         width: 200px;
         height: 59px;
+    }
+
+    .orbit-container {
+        height: 573px !important;
     }
 }
 
