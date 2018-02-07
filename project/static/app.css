@@ -191,8 +191,10 @@ h2.subheaderless {
   padding-right: 40px;
 }
 
-.logo {
-  height: 50px;
+@media only screen and (min-width: 600px) {
+  .logo {
+    height: 50px;
+  }
 }
 
 .top-bar {
