@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['cfoinsights.herokuapp.com', 'cfoinsights.org']
 
 # Application definition
 
-
+PREPEND_WWW = True
 
 
 
