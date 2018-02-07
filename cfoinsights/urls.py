@@ -9,6 +9,9 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from django.views.generic import RedirectView
+from django.core.urlresolvers import reverse_lazy
+
 
 admin.autodiscover()
 
@@ -17,16 +20,21 @@ urlpatterns = [
         {'sitemaps': {'cmspages': CMSSitemap}}),
 ]
 
-urlpatterns += (
-    url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^tinymce/', include('tinymce.urls')),
-
+prefix_urls = [
     url(r'^$', include('landing.urls')),
     url(r'^agenda/', include('agenda.urls')),
     url(r'^speakers/', include('speakers.urls')),
     url(r'^sponsors/', include('sponsors.urls')),
     url(r'^team/', include('employees.urls')),
     url(r'^survey/', include('survey.urls', namespace='survey')),
+]
+
+
+urlpatterns += (
+    url(r'^$', RedirectView.as_view(url=reverse_lazy('index'))),
+    url(r'^denmark/', include(prefix_urls)),
+    url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^tinymce/', include('tinymce.urls')),
 
     url(r'^cms', include('cms.urls')),
 )
