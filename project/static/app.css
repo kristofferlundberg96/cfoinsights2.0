@@ -296,6 +296,10 @@ h2.subheaderless {
     width: 950px;
   }
 
+  #landing-video {
+    margin-top: 20px;
+  }
+
   .member-title {
     height: 124px !important;
   }
@@ -1478,4 +1482,11 @@ a.card:hover p.speaker-subheader {
 .spinner .rect5 {
   -webkit-animation-delay: -0.8s !important;
   animation-delay: -0.8s !important;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  #landing-video {
+    width: 100% !important;
+  }
 }
