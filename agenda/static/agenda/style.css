@@ -147,3 +147,9 @@ a:hover .hover-overlay, a:focus .hover-overlay {
 .panelist-slug {
   display: inline-block;
 }
+
+@media only screen and (max-width: 1300) {
+  .panel-name {
+    height: 130px;
+  }
+}
