@@ -41,37 +41,37 @@ CFO Insights - Team
 
 {% block content %}
 
-  <section class="subpage-hero" id="speakers-hero">
-    <div class="content">
-      <h1 class="subpage-header">The team</h1>
-      <p class="subheader">CFO Insights IVS is founded and run by business students from all over the country with an interest in the future role of the CFO. Get to know more about each individual member by clicking on their portraits.</p>
-    </div>
-  </section>
+<section class="subpage-hero" id="speakers-hero">
+  <div class="content">
+    <h1 class="subpage-header">The team</h1>
+    <p class="subheader">CFO Insights IVS is founded and run by business students from all over the country with an interest in the future role of the CFO. Get to know more about each individual member by clicking on their portraits.</p>
+  </div>
+</section>
 
-  <section class="content members-grid">
-    <div class="grid-x grid-margin-x">
-      {% for employee in employees %}
-      <div class="large-3 medium-6 small-12 cell">
-        <a class="card member-card" href="{% url 'employee_detail' slug=employee.slug %}">
-          <div class="card-image employee-card-image">
-            <img src="{{ employee.photo.url }}">
+<section class="content members-grid">
+  <div class="grid-x grid-margin-x">
+    {% for employee in employees %}
+    <div class="large-3 medium-6 small-12 cell">
+      <a class="card member-card" href="{% url 'employee_detail' slug=employee.slug %}">
+        <div class="card-image employee-card-image">
+          <img src="{{ employee.photo.url }}">
+        </div>
+        <div class="card-divider member-title">
+          <div class="member-title-inner">
+            <h2>{{ employee.name }}</h2>
+            <p class="member-position">{{ employee.title }}</p>
           </div>
-          <div class="card-divider member-title">
-            <div class="member-title-inner">
-                <h2>{{ employee.name }}</h2>
-                <p class="member-position">{{ employee.title }}</p>
-            </div>
-          </div>
-          <div class="card-section member-details">
-            <ul class="bulletless fa-ul">
-              <li class="employee-l-top"><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">{{ employee.education }}</span></li>
-              <li class="employee-l-bottom"><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">{{ employee.school }}</span></li>
-            </ul>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
+        </div>
+        <div class="card-section member-details">
+          <ul class="bulletless fa-ul">
+            <li class="employee-l-top"><span class="fa-li"><i class="fas fa-graduation-cap fa-fw"></i></span><span class="member-push-right">{{ employee.education }}</span></li>
+            <li class="employee-l-bottom"><span class="fa-li"><i class="fas fa-map-marker"></i></span><span class="member-push-right">{{ employee.school }}</span></li>
+          </ul>
+        </div>
+      </a>
     </div>
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}
 

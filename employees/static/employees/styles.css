@@ -47,3 +47,50 @@ p.member-position {
     width: 100%;
 }
 
+@media only screen and (min-width: 1300px) {
+    .employee-card-image {
+        height: 201.34px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .employee-card-image {
+        height: 143.109px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .employee-card-image {
+        height: 245.609px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .employee-card-image {
+        height: 189.703px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .employee-card-image {
+        height: 399.375px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .employee-card-image {
+        height: 279.562px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .employee-card-image {
+        height: 199.688px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .employee-card-image {
+        height: auto;
+    }
+}
