@@ -156,6 +156,6 @@ a:hover .hover-overlay, a:focus .hover-overlay {
 
 @media only screen and (max-width: 480px) {
   .push-right {
-    margin-left: 0px;
+    margin-left: 0px !important;
   }
 }
