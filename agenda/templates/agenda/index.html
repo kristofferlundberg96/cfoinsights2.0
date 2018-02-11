@@ -113,7 +113,7 @@ CFO Insights - Agenda
             <img class="company-logo" src="{{ speaker.company_logo.url }}">
           </a>
         {% endfor %}
-        <p class="push-right">{% if panels.4 %} {{ panels.4.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</p>
+        <div class="push-right">{% if panels.4 %} {{ panels.4.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</div>
         <h2><span class="agenda-time">11:55 </span>Lunch & networking</h2>
         <p class="push-right">Enjoy a well-deserved lunch and continue the discussions in the lobby.</p>
         <h2><span class="agenda-time">13:10 </span>Financial Management Panels:</h2>
@@ -169,7 +169,7 @@ CFO Insights - Agenda
             <img class="company-logo" src="{{ speaker.company_logo.url }}">
           </a>
         {% endfor %}
-        <p class="push-right">{% if panels.5 %} {{ panels.5.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</p>
+        <div class="push-right">{% if panels.5 %} {{ panels.5.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</div>
         <h2><span class="agenda-time">15:25 </span>Future Trends panels:</h2>
       </div>
     </div>
