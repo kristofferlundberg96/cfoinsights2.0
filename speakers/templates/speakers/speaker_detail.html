@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block ogdescription %}
-<meta property='og:description' content="{{ speaker.bio }}"/>
+<meta property='og:description' content="{{ speaker.bio|striptags }}"/>
 {% endblock %}
 
 {% block header %}
