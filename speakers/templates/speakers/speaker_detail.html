@@ -2,8 +2,11 @@
 {% load static %}
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'speakers/style.css' %}">
-<meta property='og:image' content="{{ speaker.photo.url }}"/>
+{% endblock %}
 
+{% block opengraph %}
+<meta property='og:image' content="{{ speaker.photo.url }}"/>
+<meta property='og:title' content="CFO Insights 2018 Speaker: {{ speaker.name }}"/>
 {% endblock %}
 
 {% block header %}

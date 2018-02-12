@@ -20,11 +20,13 @@
   <meta name="msapplication-TileColor" content="#002b39">
   <meta name="theme-color" content="#ffffff">
 
+{% block opengraph %}
   <meta property='og:title' content="CFO Insights 2018 May 25th at Hotel Marriott, Copenhagen"/>
   <meta property='og:image' content="{% static 'img/share-img.png' %}"/>
   <meta property='og:description' content="Scandinavia's biggest CFO conference with 500 attendees, 48 speakers and 9 panels. We've invited 48 speakers ranging from CFOs of some of the region's biggest companies to renowned experts to explore what the future holds for the CFO."/>
   <meta property='og:url' content='{{ request.build_absolute_uri }}' />
   <meta property="og:type" content="website" /> 
+{% endblock %}
 
   {% block stylesheets %}
   {% endblock %}
