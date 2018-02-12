@@ -4,8 +4,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'speakers/style.css' %}">
 {% endblock %}
 
-{% block opengraph %}
+{% block ogimage %}
 <meta property='og:image' content="{{ speaker.photo.url }}"/>
+{% endblock %}
+
+{% block ogtitle %}
 <meta property='og:title' content="CFO Insights 2018 Speaker: {{ speaker.name }}"/>
 {% endblock %}
 
