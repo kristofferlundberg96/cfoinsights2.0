@@ -12,6 +12,10 @@
 <meta property='og:title' content="CFO Insights 2018 Speaker: {{ speaker.name }}"/>
 {% endblock %}
 
+{% block ogdescription %}
+<meta property='og:description' content="{{ speaker.bio }}"/>
+{% endblock %}
+
 {% block header %}
 <div class="header">
   <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
