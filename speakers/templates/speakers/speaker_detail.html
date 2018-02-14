@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block ogimage %}
-<meta property='og:image' content="{{ speaker.photo.url }}"/>
+<meta property='og:image' content="{% if speaker.og_image %} {{ speaker.og_image.url }} {% else %} {{ speaker.photo.url }} {% endif %}"/>
 {% endblock %}
 
 {% block ogtitle %}

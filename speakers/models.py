@@ -35,6 +35,7 @@ class Speaker(models.Model):
     youtube_link = models.TextField(null=True, blank=True)
     panels = models.ManyToManyField(Panel, related_name="speakers")
     photo = models.ImageField(upload_to='speakers')
+    og_image = models.ImageField(upload_to='speakers_og', null=True, blank=True)
     company_logo = models.ImageField(upload_to='speakers/company_logos')
     cv_list = HTMLField(null=True, blank=True)
     bio = HTMLField()
