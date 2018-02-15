@@ -40,7 +40,6 @@
 {% block content %}
 <div class="survey-wrapper" id="survey-questions">
   <div class="content">
-    <h1 class="subheaderless" style="color: white;"><span class="blue-text">CFO</span> Insights 2018<br/> International Survey</h1>
     <div class="survey-content-bg">
       <form>
         <div data-survey-pane="0">
@@ -480,32 +479,34 @@
         <div data-survey-pane="2">
           <h2>The challenges and threats you are facing</h2>
           <p class="subheader">Please rate each of these from 1 to 5 where 1 is insignificant and 5 is a substantial threat.</p>
-          <fieldset>
-            <legend>Unpredictable and volatile markets</legend>
-            <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
-            <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
-            <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
-            <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
-            <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
-          </fieldset>
-          <fieldset>
-            <legend>Technological Disruption</legend>
-            <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
-            <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
-            <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
-            <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
-            <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
-          </fieldset>
-          <fieldset>
-            <legend>Political Instability</legend>
-            <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
-            <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
-            <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
-            <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
-            <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
-          </fieldset>
+          <div class="survey-ranking-questions">
+            <fieldset>
+              <legend>Unpredictable and volatile markets</legend>
+              <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
+              <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
+              <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
+              <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
+              <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
+            </fieldset>
+            <fieldset>
+              <legend>Technological Disruption</legend>
+              <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
+              <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
+              <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
+              <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
+              <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
+            </fieldset>
+            <fieldset>
+              <legend>Political Instability</legend>
+              <input type="radio" name="pokemon" value="1" id="pokemonRed" required><label for="pokemonRed">1</label>
+              <input type="radio" name="pokemon" value="2" id="pokemonBlue"><label for="pokemonBlue">2</label>
+              <input type="radio" name="pokemon" value="3" id="pokemonYellow"><label for="pokemonYellow">3</label>
+              <input type="radio" name="pokemon" value="4" id="pokemonYellow"><label for="pokemonYellow">4</label>
+              <input type="radio" name="pokemon" value="5" id="pokemonYellow"><label for="pokemonYellow">5</label>
+            </fieldset>
+          </div>
           <label>Other
-            <input type="text" placeholder="We would love to hear what else is keeping you up at night.">
+            <input type="text" id="other-text" placeholder="We would love to hear what else is keeping you up at night.">
           </label>
         </div>
         <div data-survey-pane="3" id="survey-final">
