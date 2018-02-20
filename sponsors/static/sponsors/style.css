@@ -21,6 +21,13 @@ h2:after {
     z-index: 9999;
 }
 
+@media only screen and (max-width: 600px) {
+    .header-overlay {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
 .sponsor-cell {
     display: -webkit-box;
     display: -ms-flexbox;
