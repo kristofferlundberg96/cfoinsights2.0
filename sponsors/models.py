@@ -12,9 +12,10 @@ from tinymce.widgets import TinyMCE
 # Create your models here.
 
 CATEGORY_CHOICES = [
-        (0, "Preferred Partners"),
-        (1, "Roundtable Partners"),
-        (2, "Partners"),
+        (0, "Partners"),
+        (1, "Network Partners"),
+        (2, "Content Partners"),
+        (3, "Media Partners"),
     ]
 
 
@@ -49,6 +50,9 @@ class Sponsor(models.Model):
             self.slug = slugify(self.name)
 
         super(Sponsor, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ('category',)
 
 class SponsorModelForm(forms.ModelForm):
     #description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
