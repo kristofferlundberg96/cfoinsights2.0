@@ -22,7 +22,7 @@ class Employee(models.Model):
     name = models.TextField()
     title = models.TextField()
     bio = models.TextField()
-    team = models.ForeignKey(Team, related_name="members")
+    team = models.ForeignKey(Team, related_name="members", on_delete=models.CASCADE)
     education = models.TextField()
     school = models.TextField()
     work = models.TextField()

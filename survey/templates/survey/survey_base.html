@@ -4,7 +4,7 @@
 {% block title %} CFO Insights 2018 International Survey {% endblock %}
 
 {% block header %}
-<div class="header">
+<div class="header non-sticky">
   <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
     <div class="title-bar-left">
       <div class="title-bar-title">
@@ -38,23 +38,33 @@
 {% endblock %}
 
 {% block content %}
-<div class="survey-wrapper" id="survey-landing">
+<div class="survey-wrapper" id="survey-{% block survey_page %} {% endblock %}">
   <div class="content">
     <div class="survey-content-bg">
-      <h1><span class="bold"><span class="blue-text">CFO</span> Insights</span> 2018</br> International Survey</h1>
-      <p>Student-driven CFO Insights is conducting our first survey in a series regarding the future role of the CFO. We are looking to find out what threats the CFOs of today are facing and what actions are taken to handle them.</p>
+      {% block survey_content %}
+      {% endblock %}
     </div>
-    <div class="center">
-        <a href="{% url 'survey:about' %}" class="button">Continue</a>
+    {% block survey_buttons %}
+    {% endblock %}
+    <div class="powered-by">
+      <span class="children">
+        Powered by: <img src="{% static 'survey/kpmg.png' %}" alt="KPMG"/>
+      </span>
     </div>
   </div>
 </div>
 {% endblock %}
 
+{% block footer %} {% endblock %}
+
 {% block scripts %}
+<link href="https://surveyjs.azureedge.net/1.0.11/survey.css" type="text/css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
 <script type="text/javascript" src="{% static 'survey/js/survey.js' %}"></script>
-<script type="text/javascript" src="{% static 'survey/js/reveal.js' %}"></script>
-<script>
-  Reveal.initialize();
-</script>
+<script src="{% static 'survey/js/survey.jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'survey/js/surveyjs.sortablejs.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+{% block survey_scripts %}
+
+{% endblock %}
 {% endblock %}

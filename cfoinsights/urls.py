@@ -21,12 +21,12 @@ urlpatterns = [
 ]
 
 prefix_urls = [
-    url(r'^$', include('landing.urls')),
     url(r'^agenda/', include('agenda.urls')),
     url(r'^speakers/', include('speakers.urls')),
     url(r'^sponsors/', include('sponsors.urls')),
     url(r'^team/', include('employees.urls')),
     url(r'^survey/', include('survey.urls', namespace='survey')),
+    url(r'^', include('landing.urls')),
 ]
 
 

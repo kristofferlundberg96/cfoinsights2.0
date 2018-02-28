@@ -406,9 +406,6 @@ h2.subheaderless {
 }
 
 @media only screen and (max-width: 320px) {
-  .logo {
-    height: 40px !important;
-  }
   input[type="text"] {
     width: 70% !important;
   }

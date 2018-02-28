@@ -19,9 +19,12 @@ $(function() {
 
     var overlayOpen = false;
 
-    $(".header").headroom({
-        offset: 50,
-    });
+    var header = $('.header');
+    if (!header.hasClass('non-sticky')) {
+        $(".header").headroom({
+            offset: 50,
+        });
+    }
 
     $(".menu-icon").on("click", function(event) {
         if ($("body").hasClass("noscroll")) {

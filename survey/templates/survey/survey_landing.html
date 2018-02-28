@@ -1,0 +1,24 @@
+{% extends 'survey/survey_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="survey-wrapper" id="survey-landing">
+  <div class="content">
+	<h1><span class="bold"><span class="blue-text">CFO</span> Insights</span> 2018</br> International Survey</h1>
+    <div class="survey-content-bg">
+    	<div class="survey-non-questions">
+      		<p>Student-driven CFO Insights is conducting our first in collaboration with KPMG.</p>
+      		<p>We are looking to find out how a modern CFO prioritizes his or her time, what challenges you are facing and what opportunities you are considering.</p>
+      </div>
+    </div>
+    <div class="center">
+        <a href="{% url 'survey:about' %}" class="button">Continue</a>
+    </div>
+    <div class="powered-by">
+      <span class="children">
+        Survey powered by: <img src="{% static 'survey/kpmg.png' %}" alt="KPMG" id="kpmg_logo" />
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}
