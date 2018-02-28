@@ -31,8 +31,7 @@ var surveyJSON = {
         }
      ]
   },
-  ]}
-  /*{
+  {
    name: "Cost Management & Efficiency",
    elements: [
     {
@@ -439,7 +438,6 @@ var surveyJSON = {
   }
  ]
 }
-*/
 
 var csrftoken = Cookies.get('csrftoken');
 
