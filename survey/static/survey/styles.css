@@ -17,6 +17,12 @@ h4 {
   color: white;
 }
 
+.content, .top-bar {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .header {
   position: relative;
 }

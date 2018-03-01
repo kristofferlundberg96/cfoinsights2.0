@@ -11,7 +11,7 @@ var surveyJSON = {
         {  
            "type":"sortablelist",
            "name":"priorities",
-           "title":"To what degree of priority do you place the following areas on your agenda as a CFO? (Rank 1-7 by drag n' drop)",
+           "title":"To what degree of priority do you place the following areas on your agenda as a CFO? (Rank by drag n' drop in a descending order from highest to smallest priority)",
            "isRequired":true,
            "choices":[  
               "Cost Management and Efficiency",
@@ -40,11 +40,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of cost management? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -76,11 +76,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of regulatory compliance? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -111,11 +111,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of cost management? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -147,11 +147,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of strategy? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -182,11 +182,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of value creation? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -220,11 +220,11 @@ var surveyJSON = {
      title: "To what degree are the following factors challenging for you in terms of risk management? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -260,6 +260,7 @@ var surveyJSON = {
      type: "matrixdropdown",
      name: "Technology - opportunity and maturity",
      title: "Technology - opportunity and maturity",
+     isRequired: true,
      columns: [
       {
        name: "Degree of Maturity"
@@ -273,7 +274,8 @@ var surveyJSON = {
       2,
       3,
       4,
-      5
+      5,
+      "N/A",
      ],
      cellType: "radiogroup",
      rows: [
@@ -300,11 +302,11 @@ var surveyJSON = {
      title: "To what degree do you see the following digitalisation areas as opportunities for increased efficiency for you as a CFO? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not considered an opportunity",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable opportunity",
       "N/A"
      ],
      rows: [
@@ -324,11 +326,11 @@ var surveyJSON = {
      title: "To what degree do you see the following digitalisation areas as opportunities for increased value creation for you as a CFO? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not considered an opportunity",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable opportunity",
       "N/A"
      ],
      rows: [
@@ -357,11 +359,11 @@ var surveyJSON = {
      title: "To what degree do you believe the following cultural factors are challenges to effective digitalisation?",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -378,11 +380,11 @@ var surveyJSON = {
      title: "To what degree do you believe the following technological aspects are challenges to effective digitalisation?",
      isRequired: true,
      columns: [
-      "1",
+      "1 - Not a challenge",
       "2",
       "3",
       "4",
-      "5",
+      "5 - A considerable challenge",
       "N/A"
      ],
      rows: [
@@ -478,6 +480,7 @@ function sendDataToServer(survey) {
 var survey = new Survey.Model(surveyJSON);
 $("#surveyContainer").Survey({
     model: survey,
+    showQuestionNumbers: "OFF",
     onComplete: sendDataToServer
 });
 });
