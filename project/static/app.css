@@ -2,6 +2,24 @@
   overflow: hidden !important;
 }
 
+.featured {
+  background-image: url('./img/am-bg.png');
+  background-size: cover;
+}
+
+.featured-overlay {
+  background-color: rgba(1,1,1,0.65);
+}
+
+.padded-youtube {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.text-aligner {
+  height: 20px;
+}
+
 .no-js .top-bar {
   display: none;
 }
@@ -13,6 +31,35 @@
 
 .no-js {
   display: none;
+}
+
+.vid-header {
+  margin-bottom: 20px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+}
+
+.vid-header h5 {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.vid-header::after {
+  display: block;
+  content: '';
+  width: 40px;
+  height: 4px;
+  background: black;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  background-color: rgb(118, 178, 209);
 }
 
 @media screen and (min-width: 40em) {
@@ -266,6 +313,17 @@ h2.subheaderless {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.centered-img {
+  width: 100% !important;
+}
+
+.centered-img img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 50% !important;
 }
 
 .content, .top-bar {
