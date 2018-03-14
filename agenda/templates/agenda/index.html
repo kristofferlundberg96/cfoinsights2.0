@@ -148,7 +148,7 @@ CFO Insights - Agenda
                 {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description }}</p>
+                <p>{{ panel.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -203,7 +203,7 @@ CFO Insights - Agenda
                 {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description }}</p>
+                <p>{{ panel.description|safe }}</p>
               </div>
             </div>
           </div>
