@@ -126,6 +126,8 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+
 )
 
 INSTALLED_APPS = (
@@ -135,6 +137,7 @@ INSTALLED_APPS = (
     'sponsors.apps.SponsorsConfig',
     'employees.apps.EmployeesConfig',
     'survey.apps.SurveyConfig',
+    'django.contrib.flatpages',
 
     'storages',
     'tinymce',

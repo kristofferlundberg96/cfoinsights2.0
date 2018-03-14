@@ -27,6 +27,7 @@ prefix_urls = [
     url(r'^sponsors/', include('sponsors.urls')),
     url(r'^team/', include('employees.urls')),
     url(r'^survey/', include('survey.urls', namespace='survey')),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
 ]
 
 
