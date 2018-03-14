@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9r^aqwvn_n48#l06p%quj29bj2*1a#bm@($6&w%2@526bx=z40'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cfoinsights.herokuapp.com', 'cfoinsights.org', 'cfo-insights.org', 'www.cfo-insights.org']
 
