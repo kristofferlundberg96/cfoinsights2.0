@@ -27,4 +27,5 @@ def survey_ajax_submit(request):
         json_data = json.dumps(request.POST)
         json_loaded = json.loads(json_data)
         ResponsesBeta.objects.create(data=json_loaded)
+        print(json_loaded)
         return JsonResponse(request.POST)

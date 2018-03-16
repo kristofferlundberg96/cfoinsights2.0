@@ -41,10 +41,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -77,10 +77,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -112,10 +112,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -148,10 +148,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -183,10 +183,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -221,10 +221,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -259,14 +259,14 @@ var surveyJSON = {
     {
      type: "matrixdropdown",
      name: "Technology - opportunity and maturity",
-     title: "Technology - opportunity and maturity",
+     title: "Technology - opportunity and maturity.",
      isRequired: true,
      columns: [
       {
-       name: "Degree of Maturity"
+       name: "Degree of Maturity. 1 = Not mature for implementation, 5 = mature for implementation."
       },
       {
-       name: "Degree of Opportunity"
+       name: "Degree of Opportunity. 1 = Not considered an opportunity, 5 = major opportunity."
       }
      ],
      choices: [
@@ -302,11 +302,11 @@ var surveyJSON = {
      title: "To what degree do you see the following digitalisation areas as opportunities for increased efficiency for you as a CFO? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1 - Not considered an opportunity",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable opportunity",
+      "1 - Not an opportunity",
+      "2 - A minor opportunity",
+      "3 - An opportunity",
+      "4 - A considerable opportunity",
+      "5 - A major opportunity",
       "N/A"
      ],
      rows: [
@@ -326,11 +326,11 @@ var surveyJSON = {
      title: "To what degree do you see the following digitalisation areas as opportunities for increased value creation for you as a CFO? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
-      "1 - Not considered an opportunity",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable opportunity",
+      "1 - Not an opportunity",
+      "2 - A minor opportunity",
+      "3 - An opportunity",
+      "4 - A considerable opportunity",
+      "5 - A major opportunity",
       "N/A"
      ],
      rows: [
@@ -360,10 +360,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
@@ -381,10 +381,10 @@ var surveyJSON = {
      isRequired: true,
      columns: [
       "1 - Not a challenge",
-      "2",
-      "3",
-      "4",
-      "5 - A considerable challenge",
+      "2 - A minor challenge",
+      "3 - A challenge",
+      "4 - A considerable challenge",
+      "5 - A major challenge",
       "N/A"
      ],
      rows: [
