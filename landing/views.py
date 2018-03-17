@@ -19,11 +19,11 @@ class LandingView(TemplateView):
             if not featured_speaker in featured_speakers:
                 featured_speakers.append(featured_speaker)
 
-        featured_sponsors = []
-        while len(featured_sponsors) < 4:
-            featured_sponsor = Sponsor.randoms.random_featured()
-            if not featured_sponsor in featured_sponsors:
-                featured_sponsors.append(featured_sponsor)
+        featured_sponsors = Sponsor.objects.filter(featured=True)
+        #while len(featured_sponsors) < 4:
+        #    featured_sponsor = Sponsor.randoms.random_featured()
+        #    if not featured_sponsor in featured_sponsors:
+        #        featured_sponsors.append(featured_sponsor)
 
         context['featured_speakers'] = featured_speakers
         context['featured_sponsors'] = featured_sponsors
