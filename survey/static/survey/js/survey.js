@@ -108,7 +108,7 @@ var surveyJSON = {
     {
      type: "matrix",
      name: "question1",
-     title: "To what degree are the following factors challenging for you in terms of cost management? (Rate 1 - 5) ",
+     title: "To what degree are the following factors challenging for you in terms of governance & stakeholder management? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
       "1 - Not a challenge",
@@ -119,12 +119,15 @@ var surveyJSON = {
       "N/A"
      ],
      rows: [
-      "Reporting and transparency",
-      "Cost variability",
-      "Offshoring and nearshoring",
-      "Outsourcing",
-      "Automation",
-      "Cost efficiency"
+     "Organisation and structure",
+     "Roles & responsibilities",
+     "Segregation of duties",
+     "Cascading goals",
+     "Alignment of incentive structures",
+     "Build CxO relations",
+     "Increased business understanding",
+     "Managing external relations (IR, investors and media)",
+     "Meeting stakeholder expectations on ethics and sustainability",
      ]
     },
     {

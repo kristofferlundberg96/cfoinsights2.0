@@ -81,7 +81,7 @@
                         arrow_container.appendChild(arrow_svg);
                         r.style.cssText = n.areaStyle, a.innerHTML = e.emptyText, r.appendChild(a), i.style.cssText = n.areaStyle, i.style.marginTop = "10px"
                         t.appendChild(r);
-                        t.appendChild(arrow_container);
+                        //t.appendChild(arrow_container);
                         t.appendChild(i);
 
                         var l = function(t) {
