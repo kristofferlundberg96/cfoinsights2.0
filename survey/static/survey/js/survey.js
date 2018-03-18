@@ -301,8 +301,8 @@ var surveyJSON = {
    elements: [
     {
      type: "matrix",
-     name: "To what degre do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
-     title: "To what degre do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
+     name: "To what degree do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
+     title: "To what degree do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
       "1 - Not an opportunity",
@@ -326,7 +326,7 @@ var surveyJSON = {
     {
      type: "matrix",
      name: "question5",
-     title: "To what degre do you see digitalisation as an opportunity to increase value creation on the following areas? (Rate 1 - 5)",
+     title: "To what degree do you see digitalisation as an opportunity to increase value creation on the following areas? (Rate 1 - 5)",
      isRequired: true,
      columns: [
       "1 - Not an opportunity",
