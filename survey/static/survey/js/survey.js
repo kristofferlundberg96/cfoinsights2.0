@@ -11,7 +11,7 @@ var surveyJSON = {
         {  
            "type":"sortablelist",
            "name":"priorities",
-           "title":"To what degree of priority do you place the following areas on your agenda as a CFO? (Rank by drag n' drop in a descending order from highest to smallest priority)",
+           "title":"To what degree do you prioritise the following areas on your agenda as a CFO? (Rank by drag n' drop in a descending order from highest to smallest priority)",
            "isRequired":true,
            "choices":[  
               "Cost Management and Efficiency",
@@ -254,7 +254,7 @@ var surveyJSON = {
     {
      type: "html",
      name: "question4",
-     html: "<p><strong>Example:</strong> To what degree is big data an opportunity for your organization?</p>\n\n<p><strong>Example:</strong> To what degree is your organization sufficiently mature for effective implementation of big data?</p>"
+     html: "<p><strong>Example:</strong> To what degree is Blockchain an opportunity for your organization?</p>\n\n<p><strong>Example:</strong> To what degree is your organization sufficiently mature for effective implementation of AI and Machine Learning?</p>"
     },
     {
      type: "matrixdropdown",
@@ -298,8 +298,8 @@ var surveyJSON = {
    elements: [
     {
      type: "matrix",
-     name: "To what degree do you see the following factors as opportunities within digitalisation for you as a CFO? (Rate 1 - 5) ",
-     title: "To what degree do you see the following digitalisation areas as opportunities for increased efficiency for you as a CFO? (Rate 1 - 5) ",
+     name: "To what degre do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
+     title: "To what degre do you see digitalisation as an opportunity to increase efficiency on the following areas? (Rate 1 - 5) ",
      isRequired: true,
      columns: [
       "1 - Not an opportunity",
@@ -323,7 +323,7 @@ var surveyJSON = {
     {
      type: "matrix",
      name: "question5",
-     title: "To what degree do you see the following digitalisation areas as opportunities for increased value creation for you as a CFO? (Rate 1 - 5) ",
+     title: "To what degre do you see digitalisation as an opportunity to increse value creation on the following areas? (Rate 1 - 5)",
      isRequired: true,
      columns: [
       "1 - Not an opportunity",
@@ -377,7 +377,7 @@ var surveyJSON = {
     {
      type: "matrix",
      name: "question7",
-     title: "To what degree do you believe the following technological aspects are challenges to effective digitalisation?",
+     title: "To what degree do you believe the following aspects are challenges to effective digitalisation?",
      isRequired: true,
      columns: [
       "1 - Not a challenge",
