@@ -326,7 +326,7 @@ var surveyJSON = {
     {
      type: "matrix",
      name: "question5",
-     title: "To what degre do you see digitalisation as an opportunity to increse value creation on the following areas? (Rate 1 - 5)",
+     title: "To what degre do you see digitalisation as an opportunity to increase value creation on the following areas? (Rate 1 - 5)",
      isRequired: true,
      columns: [
       "1 - Not an opportunity",

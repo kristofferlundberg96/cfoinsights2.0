@@ -240,11 +240,11 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2020 20:00:00 GMT',
-    'Cache-Control': 'max-age=0',
+    'Cache-Control': 'max-age=86400',
 }
 
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=0',
+    'CacheControl': 'max-age=86400',
 }
 
 AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME  
