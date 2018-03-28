@@ -54,6 +54,10 @@ div.orbit:focus, .orbit-wrapper:focus, .orbit-container:focus {
     margin-left: 0px !important;
 }
 
+.speaker-cv-list-no-margin ul {
+    font-size: 16px !important;
+}
+
 .speaker-cv-list-no-margin ul li:first-child {
     margin-top: 0px;
 }
