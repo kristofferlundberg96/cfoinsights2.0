@@ -86,17 +86,9 @@ html {
   text-align: center;
   height: 80vh;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1023px) {
@@ -274,7 +266,6 @@ h2.subheaderless {
   width: 0;
   height: 1.5px;
   background: rgb(118, 178, 209);
-  -webkit-transition: width .3s;
   transition: width .3s;
   position: relative;
   top: 8px;
@@ -286,7 +277,6 @@ h2.subheaderless {
 
 .menu li a:hover::after {
   width: 100%;
-  -webkit-transition: width .3s;
   transition: width .3s;
 }
 
@@ -304,14 +294,8 @@ h2.subheaderless {
   background-color: rgba(0,0,0, 0.75);
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -337,7 +321,7 @@ h2.subheaderless {
   margin-right: auto;
 }
 
-.headroom {position: fixed;top: 0;left: 0;right: 0;-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out; margin}
+.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out; margin}
 .headroom--unpinned {top: -100px;}
 .headroom--pinned {top: 0;}
 
@@ -1228,12 +1212,8 @@ h2, .h2 {
 }
 
 .member-info-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .member-info .svg-inline--fa {
@@ -1363,15 +1343,9 @@ h2, .h2 {
 }
 
 .hero .layer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content .button {
@@ -1418,12 +1392,8 @@ a:hover, a:focus {
 }
 
 .who-list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 a.card:hover .hover-overlay, a.card:hover .hover-overlay-large {
@@ -1446,15 +1416,9 @@ a.card:hover p.speaker-subheader {
 
 .speaker-card-name-wrapper {
   height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -1495,10 +1459,18 @@ a.card:hover p.speaker-subheader {
   width: 200px;
 }
 
-.sponsor-landing-cell {
+.sponsor-cell-img {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  min-height: 1px;
+}
+
+.sponsor-cell-img-inner {
+  flex-shrink: 0;
+  width: 100%;
 }
 
 .spinner {
