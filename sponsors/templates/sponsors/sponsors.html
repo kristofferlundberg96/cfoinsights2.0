@@ -62,8 +62,10 @@ CFO Insights - Sponsors
   <div class="content center">
       <div class="grid-x grid-margin-x">
         {% for sponsor in details.sponsors %}
-          <div class="medium-3 small-3 cell sponsor-cell">
-            <img src="{{ sponsor.company_logo.url }}"/>
+          <div class="medium-3 small-3 cell sponsor-cell-img">
+            <div class="sponsor-cell-img-inner">
+              <img src="{{ sponsor.company_logo.url }}"/>
+            </div>
           </div>
         {% endfor %}
       </div>
