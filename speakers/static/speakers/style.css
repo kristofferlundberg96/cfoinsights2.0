@@ -16,6 +16,26 @@
     width: 191.66px;
 }
 
+.speaker-image-block {
+    position: relative;
+}
+
+.moderator-speaker {
+    position: absolute;
+    display: inline-block;
+    color: white;
+    background-color: rgba(235, 51, 36, 0.5);
+    border-top-right-radius: 5px;
+    bottom: 0px;
+    left: 0px;
+    width: 80px;
+}
+
+.moderator-speaker p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .hover-overlay, .loading-placeholder {
     margin-top: -191.66px;
 }

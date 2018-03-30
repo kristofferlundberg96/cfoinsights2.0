@@ -89,7 +89,15 @@ CFO Insights - Speakers
           {% for speaker in speakers_list %}
             <div class="large-3 medium-6 cell small-6 speaker-cell" data-category="{% for panel in speaker.panels.all %}{{ panel.category }} {% endfor %}">
               <a href="{% url 'speaker_detail' slug=speaker.slug %}" class="card speaker-card">
-                <img src="{{ speaker.photo.url }}" class="speaker-img">
+                <div class="speaker-image-block">
+                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  {% if speaker.moderator %}
+                  <div class="moderator-speaker">
+                    <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                    <p>Moderator</p>
+                  </div>
+                  {% endif %}
+                </div>
                 <div class="hover-overlay-large"></div>
                 <div class="card-section">
                   <div class="speaker-card-name-wrapper">

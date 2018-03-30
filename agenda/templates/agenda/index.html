@@ -44,7 +44,6 @@ CFO Insights - Agenda
   <div class="content">
     <h1 class="subpage-header">Agenda</h1>
     <p class="subheader">CFO Insights 2018 is organized around 3 main themes with 3 panels running in parallel each. Join us as we explore the role of the future CFO with 9 panel debates and 3 keynotes.</p>
-    <p class="subheader">Interested in speaking? Apply now!</p>
   </div>
 </section>
 
@@ -83,7 +82,16 @@ CFO Insights - Agenda
                 {% for speaker in panel.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
-                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="agenda-speaker-image-block">
+                    {% if speaker.moderator %}
+                    <div class="moderator-speaker">
+                      <div class="moderator-icon-outer">
+                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    {% endif %}
+                    <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  </div>
                   <div class="hover-overlay"></div>
                   <p class="speaker-title">{{ speaker.title }}</p>
                   <img class="company-logo" src="{{ speaker.company_logo.url }}">
@@ -140,7 +148,16 @@ CFO Insights - Agenda
                 {% for speaker in panel.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
-                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="agenda-speaker-image-block">
+                    {% if speaker.moderator %}
+                    <div class="moderator-speaker">
+                      <div class="moderator-icon-outer">
+                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    {% endif %}
+                    <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  </div>
                   <div class="hover-overlay"></div>
                   <p class="speaker-title">{{ speaker.title }}</p>
                   <img class="company-logo" src="{{ speaker.company_logo.url }}">
@@ -195,7 +212,16 @@ CFO Insights - Agenda
                 {% for speaker in panel.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
-                  <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  <div class="agenda-speaker-image-block">
+                    {% if speaker.moderator %}
+                    <div class="moderator-speaker">
+                      <div class="moderator-icon-outer">
+                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    {% endif %}
+                    <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  </div>
                   <div class="hover-overlay"></div>
                   <p class="speaker-title">{{ speaker.title }}</p>
                   <img class="company-logo" src="{{ speaker.company_logo.url }}">

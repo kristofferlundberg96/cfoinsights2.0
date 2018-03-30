@@ -41,6 +41,7 @@ class Speaker(models.Model):
     bio = HTMLField()
     slug = models.SlugField(unique=True, blank=True)
     featured = models.BooleanField(default=False)
+    moderator = models.BooleanField(default=False)
 
     objects = models.Manager()
     randoms = SpeakerManager()
