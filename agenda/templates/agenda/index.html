@@ -78,28 +78,39 @@ CFO Insights - Agenda
                     {{ panel.name }}
                   </h3>
               </div>
-              {% if panel.speakers %}
               <div class="card-section panel-speakers">
-                {% for speaker in panel.speakers.all %}
-                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
-                  <p class="speaker-name">{{ speaker.name }}</p>
-                  <div class="agenda-speaker-image-block">
-                    {% if speaker.moderator %}
-                    <div class="moderator-speaker">
-                      <div class="moderator-icon-outer">
-                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
-                      </div>
+                {% if panel.roundtable %}
+                  {% for table in 'xxxx' %}
+                  <span class="card panelist-slug">
+                    <p class="speaker-name"></p>
+                    <div class="agenda-speaker-image-block">
+                      <img src="{% static 'agenda/roundtable.png' %}" class="speaker-img">
                     </div>
-                    {% endif %}
-                    <img src="{{ speaker.photo.url }}" class="speaker-img">
-                  </div>
-                  <div class="hover-overlay"></div>
-                  <p class="speaker-title">{{ speaker.title }}</p>
-                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
-                </a>
-                {% endfor %}
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                  </span>
+                  {% endfor %}
+                {% else %}
+                  {% for speaker in panel.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
+                    <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
+                    </div>
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                  </a>
+                  {% endfor %}
+                {% endif %}
               </div>
-              {% endif %}
               <div class="card-section panel-desc">
                 <p>{{ panel.description|safe }}</p>
               </div>
@@ -146,28 +157,39 @@ CFO Insights - Agenda
                   {{ panel.name }}
                 </h3>
               </div>
-              {% if panel.speakers %}
               <div class="card-section panel-speakers">
-                {% for speaker in panel.speakers.all %}
-                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
-                  <p class="speaker-name">{{ speaker.name }}</p>
-                  <div class="agenda-speaker-image-block">
-                    {% if speaker.moderator %}
-                    <div class="moderator-speaker">
-                      <div class="moderator-icon-outer">
-                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
-                      </div>
+                {% if panel.roundtable %}
+                  {% for table in 'xxxx' %}
+                  <span class="card panelist-slug">
+                    <p class="speaker-name"></p>
+                    <div class="agenda-speaker-image-block">
+                      <img src="{% static 'agenda/roundtable.png' %}" class="speaker-img">
                     </div>
-                    {% endif %}
-                    <img src="{{ speaker.photo.url }}" class="speaker-img">
-                  </div>
-                  <div class="hover-overlay"></div>
-                  <p class="speaker-title">{{ speaker.title }}</p>
-                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
-                </a>
-                {% endfor %}
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                  </span>
+                  {% endfor %}
+                {% else %}
+                  {% for speaker in panel.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
+                    <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
+                    </div>
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                  </a>
+                  {% endfor %}
+                {% endif %}
               </div>
-              {% endif %}
               <div class="card-section panel-desc">
                 <p>{{ panel.description|safe }}</p>
               </div>
@@ -213,28 +235,37 @@ CFO Insights - Agenda
                 </h3>
               </div>
               <div class="card-section panel-speakers {% if panel.speakers.all|length >= 4%}full-panel{%endif%}">
-              {% if panel.speakers %}
-              <div class="card-section panel-speakers">
-                {% for speaker in panel.speakers.all %}
-                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
-                  <p class="speaker-name">{{ speaker.name }}</p>
-                  <div class="agenda-speaker-image-block">
-                    {% if speaker.moderator %}
-                    <div class="moderator-speaker">
-                      <div class="moderator-icon-outer">
-                        <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
-                      </div>
+                {% if panel.roundtable %}
+                  {% for table in 'xxxx' %}
+                  <span class="card panelist-slug">
+                    <p class="speaker-name"></p>
+                    <div class="agenda-speaker-image-block">
+                      <img src="{% static 'agenda/roundtable.png' %}" class="speaker-img">
                     </div>
-                    {% endif %}
-                    <img src="{{ speaker.photo.url }}" class="speaker-img">
-                  </div>
-                  <div class="hover-overlay"></div>
-                  <p class="speaker-title">{{ speaker.title }}</p>
-                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
-                </a>
-                {% endfor %}
-              </div>
-              {% endif %}
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                  </span>
+                  {% endfor %}
+                {% else %}
+                  {% for speaker in panel.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
+                    <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
+                    </div>
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                  </a>
+                  {% endfor %}
+                {% endif %}
               </div>
               <div class="card-section panel-desc">
                 <p>{{ panel.description|safe }}</p>

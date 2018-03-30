@@ -13,6 +13,7 @@ class Panel(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     category = models.TextField()
+    roundtable = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
