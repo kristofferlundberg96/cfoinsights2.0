@@ -78,6 +78,7 @@ CFO Insights - Agenda
                     {{ panel.name }}
                   </h3>
               </div>
+              {% if panel.speakers %}
               <div class="card-section panel-speakers">
                 {% for speaker in panel.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
@@ -98,6 +99,7 @@ CFO Insights - Agenda
                 </a>
                 {% endfor %}
               </div>
+              {% endif %}
               <div class="card-section panel-desc">
                 <p>{{ panel.description|safe }}</p>
               </div>
