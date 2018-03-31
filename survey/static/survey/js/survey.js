@@ -413,6 +413,7 @@ var surveyJSON = {
      type: "dropdown",
      name: "country",
      title: "Where are you from?",
+     isRequired: true,
      choices: [
       "Afghanistan",
       "Albania",
@@ -611,6 +612,18 @@ var surveyJSON = {
       "Zambia",
       "Zimbabwe"
      ]
+    },
+    {
+     type: "text",
+     name: "Your e-mail",
+     isRequired: true,
+     inputType: "email"
+    },
+    {
+     type: "text",
+     name: "Phone number",
+     title: "Your phone number (including localization)",
+     inputType: "tel"
     }
    ],
   },
@@ -630,25 +643,6 @@ var surveyJSON = {
    ],
    title: "Follow-up"
   },
-  {
-   name: "Contact Information",
-   elements: [
-    {
-     type: "text",
-     name: "Your e-mail",
-     isRequired: true,
-     inputType: "email"
-    },
-    {
-     type: "text",
-     name: "Phone number",
-     title: "Your phone number (including localization)",
-     inputType: "tel"
-    }
-   ],
-   visibleIf: "{follow-up} = 'Yes'",
-   title: "Your contact information"
-  }
  ]
 }
 
