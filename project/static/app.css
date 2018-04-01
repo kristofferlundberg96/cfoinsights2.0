@@ -1540,3 +1540,7 @@ a.card:hover p.speaker-subheader {
     width: 100% !important;
   }
 }
+
+#test-cb {
+  display: none;
+}

@@ -137,7 +137,10 @@ INSTALLED_APPS = (
     'sponsors.apps.SponsorsConfig',
     'employees.apps.EmployeesConfig',
     'survey.apps.SurveyConfig',
+    'api.apps.ApiConfig',
     'django.contrib.flatpages',
+    'rest_framework',
+    'rest_framework.authtoken',
 
     'storages',
     'tinymce',
@@ -251,6 +254,15 @@ AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
 AWS_IS_GZIPPED = True
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 if os.environ.get('DEVELOPMENT') is not None:
     from .settings_dev import *
