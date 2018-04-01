@@ -472,23 +472,6 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
   {% block scripts %}
   <script type="text/javascript" src='{% static "landing/landing.js" %}'></script>
 
-  <script src="//www.google-analytics.com/cx/api.js?experiment=RTbYn9nHTyCnQPbLlYA5AQ"></script>
-
-  <script>
-    var chosenVariation = cxApi.chooseVariation();
-  </script>
-  {% block ga_code %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115153787-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-115153787-1');
-</script>
-{% endblock %}
-
   <script type="text/javascript">
     var pageVariations = [
       function() {},  // Original: Do nothing. This will render the default HTML.
