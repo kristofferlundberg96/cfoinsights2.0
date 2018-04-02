@@ -469,6 +469,8 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
   </section>
   {% endblock %}
 
+  {% block ga_code %}{%endblock%}
+
   {% block scripts %}
   <script type="text/javascript" src='{% static "landing/landing.js" %}'></script>
 
@@ -492,7 +494,6 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
       pageVariations[chosenVariation]();
     });
   </script>
-  {% block ga_code %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115153787-1"></script>
 <script>
@@ -502,5 +503,4 @@ CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriot
 
   gtag('config', 'UA-115153787-1');
 </script>
-{% endblock %}
   {% endblock %}
