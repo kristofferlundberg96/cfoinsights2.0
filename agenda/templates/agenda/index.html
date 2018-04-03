@@ -56,8 +56,16 @@ CFO Insights - Agenda
         <p class="push-right">Grab your event documentation package, some breakfast and exchange your first business cards.</p>
         <h2><span class="agenda-time">9:00 </span>Official welcome to CFO Insights 2018</h2>
         <p class="push-right">Get to know the practicalities of the day and be introduced to our conferencier.</p>
-        <h2><span class="agenda-time">9:10 </span>Keynote 1: {% if panels.3 %} {{ panels.3.0.1.name }} {% else %} TBA {% endif %}</h2>
-        <p class="push-right">{% if panels.3 %} panels.3.0.1.description {% else %} Stay tuned! {% endif %}</p>
+        <h2 id="{{ panels.5.0.1.pk }}"><span class="agenda-time"">14:25 </span>Keynote 3: {% if panels.5 %} {{ panels.5.0.1.name }} {% else %} TBA {% endif %}</h2>
+        {% for speaker in panels.3.0.1.speakers.all %}
+          <a class="card panelist-slug push-right" href="{% url 'speaker_detail' slug=speaker.slug %}">
+            <p class="speaker-name">{{ speaker.name }}</p>
+            <img src="{{ speaker.photo.url }}" class="speaker-img">
+            <div class="hover-overlay"></div>
+            <p class="speaker-title">{{ speaker.title }}</p>
+            <img class="company-logo" src="{{ speaker.company_logo.url }}">
+          </a>
+        {% endfor %}
         <h2><span class="agenda-time">10:10 </span>Strategy panels:</h2>
       </div>
     </div>
