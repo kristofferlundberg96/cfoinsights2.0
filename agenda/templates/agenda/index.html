@@ -66,6 +66,7 @@ CFO Insights - Agenda
             <img class="company-logo" src="{{ speaker.company_logo.url }}">
           </a>
         {% endfor %}
+        <div class="push-right">{% if panels.3 %} {{ panels.3.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</div>
         <h2><span class="agenda-time">10:10 </span>Strategy panels:</h2>
       </div>
     </div>
