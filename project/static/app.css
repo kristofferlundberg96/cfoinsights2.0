@@ -368,7 +368,7 @@ h2.subheaderless {
   }
 
   .ticket-wrapper::before {
-    width: 320px !important;
+    width: 436px !important;
     left: -11.67px !important;
   }
 }
@@ -412,7 +412,6 @@ h2.subheaderless {
   }
 
   .ticket-wrapper::before {
-    width: 525px !important;
     left: -12.5px !important;
   }
 }
@@ -795,6 +794,10 @@ input[type="text"] {
 
 .ticket-wrapper {
   position: relative;
+  display: block;
+  max-width: 413.33px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ticket-wrapper::before {
