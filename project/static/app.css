@@ -1563,3 +1563,7 @@ a.card:hover p.speaker-subheader {
   background: linear-gradient(to left top, transparent 45.5%, currentColor 47.5%, currentColor 52.5%, transparent 54.5%);
   pointer-events: none;
 }
+
+.mid-section h3 {
+  margin-top: 0px;
+}
