@@ -615,16 +615,10 @@ var surveyJSON = {
     },
     {
      type: "text",
-     name: "Your e-mail",
+     name: "Your e-mail. You will receive the final results from the survey by e-mail.",
      isRequired: true,
      inputType: "email"
     },
-    {
-     type: "text",
-     name: "Phone number",
-     title: "Your phone number (including localization)",
-     inputType: "tel"
-    }
    ],
   },
   {
