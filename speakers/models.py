@@ -46,6 +46,9 @@ class Speaker(models.Model):
     objects = models.Manager()
     randoms = SpeakerManager()
 
+    class Meta:
+        ordering = ['-moderator']
+
     def __str__(self):
         return self.name
 
