@@ -139,6 +139,13 @@ h3::after {
 
 .panel-speakers {
   min-height: 398px;
+  text-align: justify;
+}
+
+.panel-speakers:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
 }
 
 a:hover .hover-overlay, a:focus .hover-overlay {

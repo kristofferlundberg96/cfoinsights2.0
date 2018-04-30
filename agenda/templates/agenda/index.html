@@ -72,7 +72,8 @@ CFO Insights - Agenda
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">8:15 </span>Strategy panels</h2>
+        <h2><span class="agenda-time">09:20 - 09:35</span>Breakout Session</h2>
+        <h2><span class="agenda-time">09:35 - 10:20</span>Strategy panels</h2>
       </div>
     </div>
 
@@ -92,20 +93,18 @@ CFO Insights - Agenda
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
                   {% for speaker in panels.strategy.1.speakers.all %}
-                  <a class="card panelist-slug" href="{{ speaker.slug }}">
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
+                    <p class="speaker-title">{{ speaker.title }}</p>
                     <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
                   {% endfor %}
                 </div>
-              </div>
               <div class="card-section panel-desc">
                 <p>{{ panels.strategy.1.description|safe }}</p>
               </div>
@@ -124,20 +123,18 @@ CFO Insights - Agenda
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
                   {% for speaker in panels.strategy.0.speakers.all %}
-                  <a class="card panelist-slug" href="{{ speaker.slug }}">
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
+                    <p class="speaker-title">{{ speaker.title }}</p>
                     <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
                   {% endfor %}
                 </div>
-              </div>
               <div class="card-section panel-desc">
                 <p>{{ panels.strategy.0.description|safe }}</p>
               </div>
@@ -149,9 +146,9 @@ CFO Insights - Agenda
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">8:15 </span>Breakout session</h2>
+        <h2><span class="agenda-time">10:20 - 10:35</span>Breakout session</h2>
         <p class="push-right">Go get some refreshments and stretch your legs.</p>
-        <h2><span class="agenda-time">09:35 - 10:20</span>Strategy panel:</h2>
+        <h2><span class="agenda-time">10:35 - 11:20</span>Strategy panel:</h2>
       </div>
     </div>
 
@@ -171,65 +168,20 @@ CFO Insights - Agenda
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
+                  {% for speaker in panels.strategy.2.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
-                </div>
+                  {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.strategy.2.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -239,15 +191,15 @@ CFO Insights - Agenda
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">8:15 </span>Breakout session</h2>
+        <h2><span class="agenda-time">11:20 - 11:30 </span>Breakout session</h2>
         <p class="push-right">Get some refreshments and stretch your legs.</p>
       </div>
     </div>
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">11:25 </span>Keynote 2: {% if panels.4 %} {{ panels.4.0.1.name }} {% else %} TBA {% endif %}</h2>
-        {% for speaker in panels.4.0.1.speakers.all %}
+        <h2><span class="agenda-time">11:30 - 12:30 </span>Keynote 2: {% if panels.keynote2 %} {{ panels.keynote2.0.name }} {% else %} TBA {% endif %}</h2>
+        {% for speaker in panels.keynote2.0.speakers.all %}
         <a class="card panelist-slug push-right" href="{% url 'speaker_detail' slug=speaker.slug %}">
           <p class="speaker-name">{{ speaker.name }}</p>
           <img src="{{ speaker.photo.url }}" class="speaker-img">
@@ -256,10 +208,10 @@ CFO Insights - Agenda
           <img class="company-logo" src="{{ speaker.company_logo.url }}">
         </a>
         {% endfor %}
-        <div class="push-right">{% if panels.4 %} {{ panels.4.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</div>
-        <h2><span class="agenda-time">11:55 </span>Lunch & networking</h2>
+        <div class="push-right">{% if panels.keynote2 %} {{ panels.keynote2.0.description|safe }} {% else %} Stay tuned! {% endif %}</div>
+        <h2><span class="agenda-time">12:30 - 13:15 </span>Lunch & networking</h2>
         <p class="push-right">Enjoy a well-deserved lunch and continue the discussions in the lobby.</p>
-        <h2><span class="agenda-time">13:10 </span>Financial Management Panels:</h2>
+        <h2><span class="agenda-time">13:15 - 14:00 </span>Financial Management Panels:</h2>
       </div>
     </div>
 
@@ -275,64 +227,24 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  HOW TO UNLOCK THE VALUE OF YOUR COMPANY'S DATA
+                  {{ panels.finance.1.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
+                  {% for speaker in panels.finance.1.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
-                </div>
+                  {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.finance.1.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -345,69 +257,48 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  CASE: MEET YOUR NEW ASSOCIATE: MR. ROBOT. HOW TO ACCELERATE THE VALUE OF RPA.
+                  {{ panels.finance.2.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
-                </div>
+                <span class="card panelist-slug">
+                  <p class="speaker-name"></p>
+                  <div class="agenda-speaker-image-block">
+                    <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/agenda/roundtable.png" class="speaker-img">
+                  </div>
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title"></p>
+                </span>
+                
+                <span class="card panelist-slug">
+                  <p class="speaker-name"></p>
+                  <div class="agenda-speaker-image-block">
+                    <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/agenda/roundtable.png" class="speaker-img">
+                  </div>
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title"></p>
+                </span>
+                
+                <span class="card panelist-slug">
+                  <p class="speaker-name"></p>
+                  <div class="agenda-speaker-image-block">
+                    <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/agenda/roundtable.png" class="speaker-img">
+                  </div>
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title"></p>
+                </span>
+                
+                <span class="card panelist-slug">
+                  <p class="speaker-name"></p>
+                  <div class="agenda-speaker-image-block">
+                    <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/agenda/roundtable.png" class="speaker-img">
+                  </div>
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title"></p>
+                </span>
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>Following the CFO Insights 2018 International Survey, we'll be hosting a series of roundtable sessions to discuss the central topics brought up in the survey.</p>
               </div>
             </div>
           </div>
@@ -417,9 +308,9 @@ CFO Insights - Agenda
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">8:15 </span>Breakout session</h2>
+        <h2><span class="agenda-time">14:00 - 14:15 </span>Breakout session</h2>
         <p class="push-right">Go get some refreshments and stretch your legs.</p>
-        <h2><span class="agenda-time">09:35 - 10:20</span>Financial Management Panel:</h2>
+        <h2><span class="agenda-time">14:15 - 15:00</span>Financial Management Panel:</h2>
       </div>
     </div>
 
@@ -435,69 +326,24 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  HOW TO BUY COMPANIES
+                  {{ panels.finance.0.name }}
                 </h3>
               </div>
-              <div class="card-section panel-speakers">
                 <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
+                  {% for speaker in panels.finance.0.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
-                </div>
+                  {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.finance.0.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -507,9 +353,9 @@ CFO Insights - Agenda
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">8:15 </span>Breakout session</h2>
+        <h2><span class="agenda-time">15:00 - 15:15 </span>Breakout session</h2>
         <p class="push-right">Get some refreshments and stretch your legs.</p>
-        <h2><span class="agenda-time">8:15 </span>Future Trends Panels</h2>
+        <h2><span class="agenda-time">15:15 - 16:00 </span>Future Trends Panels:</h2>
       </div>
     </div>
 
@@ -525,64 +371,24 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  HOW TO UNLOCK THE VALUE OF YOUR COMPANY'S DATA
+                  {{ panels.future.0.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
+                  {% for speaker in panels.future.0.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
+                  {% endfor %}
                 </div>
-              </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.future.0.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -595,73 +401,37 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  CASE: MEET YOUR NEW ASSOCIATE: MR. ROBOT. HOW TO ACCELERATE THE VALUE OF RPA.
+                  {{ panels.future.1.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
+                  {% for speaker in panels.future.1.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
                   </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
+                  {% endfor %}
                 </div>
-              </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.future.1.description|safe }}</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+
+    <div class="content">
+      <div class="agenda-narrow">
+        <h2><span class="agenda-time">16:00 - 16:15 </span>Breakout session</h2>
+        <p class="push-right">Get some refreshments and stretch your legs.</p>
+        <h2><span class="agenda-time">16:15 - 17:00 </span>Future Trends Panel:</h2>
       </div>
     </div>
 
@@ -677,68 +447,24 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  HOW TO BUY COMPANIES
+                  {{ panels.future.2.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                <div class="card-section panel-speakers">
-                  <a class="card panelist-slug" href="/denmark/speakers/christian-baltzer">
-                    <p class="speaker-name">Christian Baltzer</p>
-                    <div class="agenda-speaker-image-block">
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-8_kogJ8o2.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/tryg-logo.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/natalie-riise-knudsen">
-                    <p class="speaker-name">Natalie Riise-Knudsen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-7_Knmgcaj.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Finance Director - Business Investments &amp; Operations</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-6_pbJK7st.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/soren-strom">
-                    <p class="speaker-name">Søren Strøm</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-10.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Former Interim CFO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5_ADLdKdc.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/anders-olesen">
-                    <p class="speaker-name">Anders Olesen</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/Untitled-9_F7EVnYV.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">Partner, Basico and Director, Beyond Budgeting Institute</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/Untitled-5.png">
-                  </a>
-                  
-                  <a class="card panelist-slug" href="/denmark/speakers/mikael-iuel-brockdorff">
-                    <p class="speaker-name">Mikael Iuel-Brockdorff</p>
-                    <div class="agenda-speaker-image-block">
-
-                      <img src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/mikael-iuel-brockdorff.jpg" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">CEO</p>
-                    <img class="company-logo" src="https://s3-eu-west-1.amazonaws.com/cfoinsights/media/speakers/company_logos/accobat.png">
-                  </a>
-                </div>
+                {% for speaker in panels.future.2.speakers.all %}
+                <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                  <p class="speaker-name">{{ speaker.name }}</p>
+                  <div class="agenda-speaker-image-block">
+                    <img src="{{ speaker.photo.url }}" class="speaker-img">
+                  </div>
+                  <div class="hover-overlay"></div>
+                  <p class="speaker-title">{{ speaker.title }}</p>
+                  <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                </a>
+                {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panel.description|safe }}</p>
+                <p>{{ panels.future.2.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -746,11 +472,10 @@ CFO Insights - Agenda
       </div>
     </div>
 
-
     <div class="content">
       <div class="agenda-narrow">
-        <h2 id="{{ panels.5.0.1.pk }}"><span class="agenda-time"">14:25 </span>Keynote 3: {% if panels.5 %} {{ panels.5.0.1.name }} {% else %} TBA {% endif %}</h2>
-        {% for speaker in panels.5.0.1.speakers.all %}
+        <h2 id="{{ panels.5.0.1.pk }}"><span class="agenda-time"">17:05 - 17:20 </span>Keynote 3: {% if panels.keynote3 %} {{ panels.keynote3.0.name }} {% else %} TBA {% endif %}</h2>
+        {% for speaker in panels.keynote3.0.speakers.all %}
         <a class="card panelist-slug push-right" href="{% url 'speaker_detail' slug=speaker.slug %}">
           <p class="speaker-name">{{ speaker.name }}</p>
           <img src="{{ speaker.photo.url }}" class="speaker-img">
@@ -759,15 +484,15 @@ CFO Insights - Agenda
           <img class="company-logo" src="{{ speaker.company_logo.url }}">
         </a>
         {% endfor %}
-        <div class="push-right">{% if panels.5 %} {{ panels.5.0.1.description|safe }} {% else %} Stay tuned! {% endif %}</div>
+        <div class="push-right">{% if panels.keynote3.0 %} {{ panels.keynote3.0.description|safe }} {% else %} Stay tuned! {% endif %}</div>
       </div>
     </div>
 
     <div class="content">
       <div class="agenda-narrow">
-        <h2><span class="agenda-time">16:30 </span>Closing Remarks</h2>
+        <h2><span class="agenda-time">17:20 - 17:25 </span>Closing Remarks</h2>
         <p class="push-right">A big thank you to all our attendees, speakers and partners as we bring CFO Insights 2018 to an official close.</p>
-        <h2><span class="agenda-time">16:40 </span>Post-conference drinks</h2>
+        <h2><span class="agenda-time">17:25 - 18:00 </span>Post-conference drinks</h2>
         <p class="push-right">Join us in the late afternoon as we end the day with some drinks. This will be the best time to network without all the conference hassle.</p>
         <h2><span class="agenda-time">18:00 </span>Done!</h2>
         <p class="push-right">See you next year!</p>
