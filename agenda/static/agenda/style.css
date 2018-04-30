@@ -138,7 +138,6 @@ h3::after {
 }
 
 .panel-speakers {
-  margin-top: 40px;
   min-height: 398px;
 }
 
@@ -176,6 +175,7 @@ a:hover .hover-overlay, a:focus .hover-overlay {
 .panelist-slug {
   width: 90px;
   height: auto;
+  display: block;
   word-wrap: break-word;
 }
 
@@ -193,8 +193,20 @@ a:hover .hover-overlay, a:focus .hover-overlay {
   }
 }
 
+.push-right {
+  margin-left: 140px; 
+}
+
 @media only screen and (max-width: 480px) {
   .push-right {
     margin-left: 0px !important;
   }
+}
+
+.panel-title {
+  position: relative;
+}
+
+.agenda-time {
+  width: 140px;
 }

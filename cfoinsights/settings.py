@@ -239,7 +239,7 @@ AWS_SECRET_ACCESS_KEY = "9I74ejxr3xfKgYLKAd3jPbESFhBvRiv9dMmuCUGM"
 AWS_STORAGE_BUCKET_NAME = "cfoinsights"
 
 DEFAULT_FILE_STORAGE = 'cfoinsights.storage_backends.MediaStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2020 20:00:00 GMT',

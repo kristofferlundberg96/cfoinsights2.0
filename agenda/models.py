@@ -6,7 +6,15 @@ from tinymce.models import HTMLField
 from tinymce.widgets import TinyMCE
 
 
-# Create your models here.
+CATEGORY_CHOICES = [
+    (0, "Strategy"),
+    (1, "Financial Management"),
+    (2, "Future Trends"),
+    (3, "Keynote 1"),
+    (4, "Keynote 2"),
+    (5, "Keynote 3"),
+]
+
 class Panel(models.Model):
     name = models.TextField()
     description = HTMLField()
@@ -20,16 +28,6 @@ class Panel(models.Model):
 
 class PanelModelForm(forms.ModelForm):
     description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-
-    CATEGORY_CHOICES = [
-        (0, "Strategy"),
-        (1, "Financial Management"),
-        (2, "Future Trends"),
-        (3, "Keynote 1"),
-        (4, "Keynote 2"),
-        (5, "Keynote 3"),
-    ]
-
     category = forms.ChoiceField(choices=CATEGORY_CHOICES)
 
 class PanelModelAdmin(admin.ModelAdmin):

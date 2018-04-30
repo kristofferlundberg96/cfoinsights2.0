@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 
-from agenda.models import Panel
+from agenda.models import Panel, CATEGORY_CHOICES
 
 # Create your views here.
 class AgendaView(ListView):
@@ -11,13 +11,25 @@ class AgendaView(ListView):
 
     def get_queryset(self, **kwargs):
         panels = super(AgendaView, self).get_queryset(**kwargs)
-        panel_categories = {}
-        for panel in panels:
-            if not panel.category in panel_categories:
-                panel_categories[panel.category] = []
-            panel_categories[panel.category].append(panel)
+        category_choices_human = {
+            0: 'strategy',
+            1: 'finance',
+            2: 'future',
+            3: 'keynote1',
+            4: 'keynote2',
+            5: 'keynote3',
+        }
 
-        for category in panel_categories:
-            panel_categories[category] = list(zip("ABC", panel_categories[category]))
+        panel_categories = {
+            'strategy': [],
+            'finance': [],
+            'future': [],
+            'keynote1': [],
+            'keynote2': [],
+            'keynote3': [],
+        }
+        for panel in panels:
+            panel_category = category_choices_human[int(panel.category)]
+            panel_categories[panel_category].append(panel)
 
         return panel_categories
