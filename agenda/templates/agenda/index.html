@@ -97,6 +97,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                                            {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -127,6 +134,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -172,6 +186,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -235,6 +256,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -334,6 +362,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -379,6 +414,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -409,6 +451,13 @@ CFO Insights - Agenda
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                       <img src="{{ speaker.photo.url }}" class="speaker-img">
                     </div>
                     <div class="hover-overlay"></div>
@@ -455,6 +504,13 @@ CFO Insights - Agenda
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
                   <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
                     <img src="{{ speaker.photo.url }}" class="speaker-img">
                   </div>
                   <div class="hover-overlay"></div>
