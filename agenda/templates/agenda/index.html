@@ -89,11 +89,11 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  {{ panels.strategy.1 }}
+                  {{ panels.strategy.2 }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                  {% for speaker in panels.strategy.1.speakers.all %}
+                  {% for speaker in panels.strategy.2.speakers.all %}
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
@@ -113,7 +113,7 @@ CFO Insights - Agenda
                   {% endfor %}
                 </div>
               <div class="card-section panel-desc">
-                <p>{{ panels.strategy.1.description|safe }}</p>
+                <p>{{ panels.strategy.2.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -178,11 +178,11 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  {{ panels.strategy.2.name }}
+                  {{ panels.strategy.1.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                  {% for speaker in panels.strategy.2.speakers.all %}
+                  {% for speaker in panels.strategy.1.speakers.all %}
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
@@ -202,7 +202,7 @@ CFO Insights - Agenda
                   {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panels.strategy.2.description|safe }}</p>
+                <p>{{ panels.strategy.1.description|safe }}</p>
               </div>
             </div>
           </div>
