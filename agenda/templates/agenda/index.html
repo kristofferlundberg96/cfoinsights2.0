@@ -443,11 +443,11 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  {{ panels.future.1.name }}
+                  {{ panels.future.2.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                  {% for speaker in panels.future.1.speakers.all %}
+                  {% for speaker in panels.future.2.speakers.all %}
                   <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                     <p class="speaker-name">{{ speaker.name }}</p>
                     <div class="agenda-speaker-image-block">
@@ -467,7 +467,7 @@ CFO Insights - Agenda
                   {% endfor %}
                 </div>
               <div class="card-section panel-desc">
-                <p>{{ panels.future.1.description|safe }}</p>
+                <p>{{ panels.future.2.description|safe }}</p>
               </div>
             </div>
           </div>
@@ -496,11 +496,11 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  {{ panels.future.2.name }}
+                  {{ panels.future.1.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                {% for speaker in panels.future.2.speakers.all %}
+                {% for speaker in panels.future.1.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
                   <div class="agenda-speaker-image-block">
@@ -520,7 +520,7 @@ CFO Insights - Agenda
                 {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panels.future.2.description|safe }}</p>
+                <p>{{ panels.future.1.description|safe }}</p>
               </div>
             </div>
           </div>
