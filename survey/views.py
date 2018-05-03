@@ -10,15 +10,6 @@ from django.utils.decorators import method_decorator
 from survey.models import ResponsesBeta
 
 
-class SurveyAnalyserEngine:
-    def responses(self):
-        for response in ResponsesBeta.objects.all():
-            yield json.loads(response.data.get('survey_response'))
-
-    def analyse_priorities(self):
-        for response in self.responses():
-            pprint.pprint(response['priorities'])
-
 def save_survey():
     import json
     import pprint
@@ -106,7 +97,6 @@ class SurveyQuestionsView(TemplateView):
 
     @method_decorator(ensure_csrf_cookie)
     def get(self, request, *args, **kwargs):
-        save_survey()
         return super(SurveyQuestionsView, self).get(request, *args, **kwargs)
 
 def survey_ajax_submit(request):
