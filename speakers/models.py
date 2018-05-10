@@ -53,8 +53,7 @@ class Speaker(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.name)
+        self.slug = slugify(self.name)
 
         super(Speaker, self).save(*args, **kwargs)
 
