@@ -406,6 +406,43 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
+                  {{ panels.future.1.name }}
+                </h3>
+              </div>
+              <div class="card-section panel-speakers">
+                  {% for speaker in panels.future.1.speakers.all %}
+                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
+                    <p class="speaker-name">{{ speaker.name }}</p>
+                    <div class="agenda-speaker-image-block">
+                      {% if speaker.moderator %}
+                      <div class="moderator-speaker">
+                        <div class="moderator-icon-outer">
+                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <img src="{{ speaker.photo.url }}" class="speaker-img">
+                    </div>
+                    <div class="hover-overlay"></div>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
+                  </a>
+                  {% endfor %}
+                </div>
+              <div class="card-section panel-desc">
+                <p>{{ panels.future.1.description|safe }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="large-6 cell" id="{{ panel.pk }}">
+            <div class="card panel-card">
+              <div class="card-divider panel-title">
+                <h2>
+                  Second Stage
+                </h2>
+              </div>
+              <div class="card-section panel-name">
+                <h3>
                   {{ panels.future.0.name }}
                 </h3>
               </div>
@@ -434,43 +471,6 @@ CFO Insights - Agenda
               </div>
             </div>
           </div>
-          <div class="large-6 cell" id="{{ panel.pk }}">
-            <div class="card panel-card">
-              <div class="card-divider panel-title">
-                <h2>
-                  Second Stage
-                </h2>
-              </div>
-              <div class="card-section panel-name">
-                <h3>
-                  {{ panels.future.2.name }}
-                </h3>
-              </div>
-              <div class="card-section panel-speakers">
-                  {% for speaker in panels.future.2.speakers.all %}
-                  <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
-                    <p class="speaker-name">{{ speaker.name }}</p>
-                    <div class="agenda-speaker-image-block">
-                      {% if speaker.moderator %}
-                      <div class="moderator-speaker">
-                        <div class="moderator-icon-outer">
-                          <i class="fas fa-microphone moderator-icon" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      {% endif %}
-                      <img src="{{ speaker.photo.url }}" class="speaker-img">
-                    </div>
-                    <div class="hover-overlay"></div>
-                    <p class="speaker-title">{{ speaker.title }}</p>
-                    <img class="company-logo" src="{{ speaker.company_logo.url }}">
-                  </a>
-                  {% endfor %}
-                </div>
-              <div class="card-section panel-desc">
-                <p>{{ panels.future.2.description|safe }}</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -496,11 +496,11 @@ CFO Insights - Agenda
               </div>
               <div class="card-section panel-name">
                 <h3>
-                  {{ panels.future.1.name }}
+                  {{ panels.future.2.name }}
                 </h3>
               </div>
               <div class="card-section panel-speakers">
-                {% for speaker in panels.future.1.speakers.all %}
+                {% for speaker in panels.future.2.speakers.all %}
                 <a class="card panelist-slug" href="{% url 'speaker_detail' slug=speaker.slug %}">
                   <p class="speaker-name">{{ speaker.name }}</p>
                   <div class="agenda-speaker-image-block">
@@ -520,7 +520,7 @@ CFO Insights - Agenda
                 {% endfor %}
               </div>
               <div class="card-section panel-desc">
-                <p>{{ panels.future.1.description|safe }}</p>
+                <p>{{ panels.future.2.description|safe }}</p>
               </div>
             </div>
           </div>
