@@ -137,7 +137,6 @@ INSTALLED_APPS = (
     'sponsors.apps.SponsorsConfig',
     'employees.apps.EmployeesConfig',
     'survey.apps.SurveyConfig',
-    'api.apps.ApiConfig',
     'django.contrib.flatpages',
     'rest_framework',
     'rest_framework.authtoken',

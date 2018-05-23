@@ -35,9 +35,7 @@ urlpatterns += (
     url(r'^$', RedirectView.as_view(url=reverse_lazy('index'))),
     url(r'^denmark/', include(prefix_urls)),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^api/', include('api.urls')),
     url(r'^cms', include('cms.urls')),
 )
 
