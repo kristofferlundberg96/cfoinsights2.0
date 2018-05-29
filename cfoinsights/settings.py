@@ -237,8 +237,8 @@ AWS_ACCESS_KEY_ID = "AKIAI4FEY75KSSZLF65A"
 AWS_SECRET_ACCESS_KEY = "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"
 AWS_STORAGE_BUCKET_NAME = "cfoinsights"
 
-#DEFAULT_FILE_STORAGE = 'cfoinsights.storage_backends.MediaStorage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'cfoinsights.storage_backends.MediaStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2020 20:00:00 GMT',
@@ -250,7 +250,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 AWS_S3_CUSTOM_DOMAIN = 's3-eu-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME  
-#STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN  
 AWS_IS_GZIPPED = True
 
 REST_FRAMEWORK = {
