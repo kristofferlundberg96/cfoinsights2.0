@@ -1,472 +1,259 @@
-{% extends 'bases/base.html' %}
 {% load static %}
 
-{% block header %}
-<div class="header">
-  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="large">
-    <div class="title-bar-left">
-      <div class="title-bar-title">
-        <img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights">
-      </div>
-    </div>
-    <div class="title-bar-right">
-      <button class="menu-icon" type="button" data-toggle></button>
-    </div>
-  </div>
-  <div class="top-bar" id="top-menu">
-    <div class="top-bar-left" id="desktop-logo">
-      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="logo" alt="CFO Insights"></a>
-    </div>
-    <div class="top-bar-right">
-      <ul class="vertical large-horizontal menu">
-        <li><a class="active" href="#hero">Home</a></li>
-        <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#speakers">Speakers</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#tickets">Register now</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-{% endblock %}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFO Insights</title>
 
-{% block title %}
-CFO Insights 2018 - The Future of the CFO is Here - May 25th 2018, Hotel Marriott Copenhagen
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="https://s3-eu-west-1.amazonaws.com/cfoinsights/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://s3-eu-west-1.amazonaws.com/cfoinsights/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://s3-eu-west-1.amazonaws.com/cfoinsights/img/favicon-16x16.png">
+  <link rel="manifest" href="https://s3-eu-west-1.amazonaws.com/cfoinsights/site.webmanifest">
+  <link rel="mask-icon" href="https://s3-eu-west-1.amazonaws.com/cfoinsights/img/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#002b39">
+  <meta name="theme-color" content="#ffffff">
 
-{% block stylesheets %}
-<link rel="stylesheet" href="{% static 'landing.css' %}">
-{% endblock %}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
-{% block content %}
-<section class="hero white-text" id="hero">
-  <div class="layer">
-    <div class="hero-content">
-      <p class="subheader">May 25th 2018, Marriott Hotel Copenhagen</p>
-      <h1>CFO Insights 2018</h1>
-      <div id="img-text">
-        <p id="subtext">The future of the CFO is here.</p>
-      </div>
-      <div class="center">
-        <a class="button transparent" href="#tickets">Register now</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Main Section -->
-<section>
-  <h2 class="subheaderless">
-    We're putting new tires on the racing cars of CFOs
-  </h2>
-  <div class="content">
-    <div class="grid-x grid-margin-x">
-      <div class="large-4 medium-12 content">
-        <div class="responsive-embed">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/-6A9ilNCPNg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="large-4 medium-12 content mid-section">
-        <h3>The largest CFO conference and the go-to place for CFOs in Scandinavia</h3>
-        <p class="subheader">By students, for professionals.</p>
-        <p>
-        The role of the CFO is currently undergoing a transformative change. Technology continues to crawl into every aspect of business, CEOs are calling for strategic advisors and markets are more volatile and unpredictable than ever.</p>
-        <p>That's why we've invited 40+ of the region's biggest CFOs, recognised experts and thought leaders to prepare you for what the future of the CFO holds.</p>
-      </div>
-      <div class="large-4 medium-12 content">
-        <div class="responsive-embed">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ujGIJFUQFNg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<meta property='og:title' content="Scandinavia's biggest CFO conference"/>
+
+
+
+<meta property='og:image' content="{% static './img/og.jpg' %}"/>
+
+
+
+<meta property='og:description' content="Sign up to our newsletter and become the first to know about CFO Insights 2019."/>
+
+
+
+<meta property='og:url' content='http://www.cfo-insights.org/denmark/' />
+
+
+
+<meta property="og:type" content="website" /> 
+
+
+
+  <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+  <div id="bg1">
+    <div class="section1">
+      <div class="hero-section">
+        <img src="{% static '/img/logo.svg' %}" id="logo">
+        <div class="hero-section-text">
+          <h1>Thank you for attending </br><span class="light-blue">CFO Insights 2018</span></h1>
+          <p class="subtitle">It has been an honour to host CFO Insights 2018. It wouldn’t have been possible without our partners, inspiring speakers and attendees. This is not the end! Sign up to our newsletter and get notified when we launch CFO Insights 2019.</p>
+          <button class="button newsletter_scroll">Sign up now</button>
         </div>
       </div>
     </div>
-  </div>
-  <div class="center">
-    <a class="button" href="#tickets">Register now</a>
-  </div>
-</div>
-</section>
 
-<section class="featured" id="videos" >
-  <div class="featured-overlay white-text">
-    <h2>CFOs getting hotdogs</h2>
-    <div class="grid-x margin-x content content-buttonless">
-      <div class="large-4 content">
-        <h3>We weren't joking.</h3>
-        <p>Aston Martin Copenhagen was generous enough to offer us a DB11 so we took Steen Blaafalk (CFO, Saxo Bank) and Torben Carlsen (CFO, DFDS) on a ride through Copenhagen. Watch as they cruise around in the comfort of leather seats as they discuss the role of the CFO and how to become a value creator.</p>
-        <h4>In collaboration with</h4>
-        <div class="centered-img">
-          <img src="{% static 'img/am-white.png' %}" alt="Aston Martin Copenhagen">
+    <div id="section1" class="section content">
+      <h1>The First Step Torwads Building The World's Greatest CFO Conference, CFO Insights.</h1>
+      <div class="grid-x grid-padding-x">
+        <div class="cell large-6">
+          <img src="{% static '/img/stage.jpg' %}" alt="More than 40 speakers took to the stage at CFO Insights 2018" class="content-img">
         </div>
-      </div>
-      <div class="large-8">
-        <div class="text-aligner"></div>
-        <div class="grid-x margin-x">
-          <div class="large-4 medium-4 small-12 padded-youtube">
-            <div class="vid-header">
-              <h5>Må jeg komme med? (Danish)</h5>
-            </div>
-            <div class="responsive-embed">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/BS0p64FIJRo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-12 padded-youtube">
-            <div class="vid-header">
-              <h5>Det er ikke svært at være CFO. Det er svært at blive CFO. (Danish)</h5>
-            </div>
-            <div class="responsive-embed">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/54DyxSu16vE?" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-12 padded-youtube">
-            <div class="vid-header">
-              <h5>Full (English subtitles)</h5>
-            </div>
-            <div class="responsive-embed">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/F4mJq8_-oAc?" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="white-text blue-layer">
-    <div id="glance-overlay">
-      <h2>
-        CFO Insights 2018 at a glance
-      </h2>
-      <div class="content">
-        <p class="subheader center">
-          Busy schedule and don't have time to read our brochure? Here are some key facts.
-        </p>
-
-        <div id="scrolling-numbers">
-          <div class="grid-x center">
-            <div class="medium-4 cell">
-              <span class="block-span number count">500</span>
-              <h3 class="caps">Attendees</h3>
-              <span class="block-span">From some of the region's largest and most influential companies.</span>
-            </div>
-            <div class="medium-4 cell">
-              <span class="number block-span count">48</span>
-              <h3 class="caps">Speakers</h3>
-              <span class="block-span">Experts, influencers, entrepreneurs, top CFO's and many more.</span>
-            </div>
-            <div class="medium-4 cell">
-              <span class="number block-span count">3</span>
-              <h3 class="caps">Tracks</h3>
-              <span class="block-span">Strategic leadership, financial management and the onslaught of technology.</span>
-            </div>
-          </div>
+        <div class="cell large-6">
+          <h3>High-quality content distributed through innovative formats for years to come.</h3>
+          <p>CFO Insights aims to provide high-quality insights into the CFO agenda, and the 2018  conference at Marriott was our first step on this journey.</p>
+          <p>The conference was by far the largest CFO conference in Denmark this year, and we reached a following of more than 1,300 finance professionals on social media. We hope that you found the insights from our 43 speakers valuable and inspiring. The conference was the first of many future events. Sign up to our newsletter to get updates about CFO Insights 2019.</p>
           <div class="center">
-            <a href="https://s3-eu-west-1.amazonaws.com/cfoinsightspub/CFO+Insights+Brochure.pdf" class="button transparent">Download our brochure</a>
+            <button class="button newsletter_scroll">Sign up now</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="light-blue-layer">
-    <h2>Who should attend?</h2>
-    <div class="content">
-      <p class="subheader center">Our content is tailored for the following groups:</p>
-      <div class="grid-x grid-margin-x" id="who-attends">
-        <div class="large-4 cell">
-          <h3 class="list-header">CFOs</h3>
-          <ul class="who-list">
-            <li>See the leading edge across our main themes of financial management, strategy and future trends.</li>
-            <li>Engage with your fellow financial leaders and establish new relations.</li>
-            <li>Connect with the region's leading service providers.</li>
-          </ul>
-        </div>
-        <div class="large-4 cell">
-          <h3 class="list-header">Financial Executives</h3>
-          <ul class="who-list">
-            <li>Accelerate your career by improving your core financial management skills.</li>
-            <li>Network with representatives from some of the region's largest companies.</li>
-            <li>Spot the trends that are sure to impact your job before it's too late.</li>
-          </ul>
-        </div>
-        <div class="large-4 cell">
-          <h3 class="list-header">Rising Students</h3>
-          <ul class="who-list">
-            <li>Go above and beyond the curriculum by learning about real problems from the real world.</li>
-            <li>Explore future career opportunities.</li>
-            <li>Grow your professional network before graduating.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="center">
-        <a class="button" href="#tickets">Register now</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="attendees">
-    <h2 class="subheaderless">A selection of our attendees</h2>
-    <div class="content">
-      <img src="{% static 'img/attendees_horizontal.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!" id="attendees_horizontal">
-      <img src="{% static 'img/attendees_vertical.png' %}" alt="Chr. Hansen, Deloitte, Danske Bank and many more!" id="attendees_vertical">
-      <div class="center">
-        <a class="button" href="#tickets">Register now</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="blue-layer white-text">
-    <div id="speakers">
-      <h2 class="subheaderless">A selection of our speakers for 2018</h2>
+    <div class="section" id="section2">
       <div class="content">
-        <div class="grid-x grid-margin-x center">
-          {% for speaker in featured_speakers %}
-          <div class="medium-3 small-6 cell">
-            <a href="{% url 'speaker_detail' slug=speaker.slug %}" class="card white-text">
-              <img class="speaker-img" src="{{ speaker.photo.url }}">
-              <div class="hover-overlay-large"></div>
-              <div class="card-section">
-                <div class="speaker-card-name-wrapper">
-                  <h3>{{ speaker.name }}</h3>
-                </div>
-                <p class="subheader speaker-subheader">{{ speaker.title }}, {{ speaker.company }}</p>
-              </div>
-            </a>
+        <div class="grid-x center">
+          <div class="medium-4 cell">
+            <span class="block-span number">400+</span>
+            <h3 class="caps">Attendees</h3>
+            <span class="block-span">From some of the region's largest and most influential companies.</span>
           </div>
-          {% endfor %}
+          <div class="medium-4 cell">
+            <span class="block-span number">40+</span>
+            <h3 class="caps">Speakers</h3>
+            <span class="block-span">From some of the region's largest and most influential companies.</span>
+          </div>
+          <div class="medium-4 cell">
+            <span class="block-span number">3</span>
+            <h3 class="caps">Tracks</h3>
+            <span class="block-span">From some of the region's largest and most influential companies.</span>
+          </div>
         </div>
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="grid-x grid-padding-x">
+              <div class="cell large-4 medium-4">
+                <img class="author_profile" src="{% static '/img/swl.jpg' %}">
+              </div>
+              <div class="cell large-8 medium-8">
+                <div class="cite">
+                  <p class="quote">”I was honored to speak at the CFO Insights conference earlier today. A great new event where you can tap into exciting insights for finance executives and expand your network. And organized by a group of highly ambitious and driven students. Well done organizers!”</p>
+                  <div class="author">
+                    <p>Søren Westh Lonning, CFO at Chr. Hansen. <img src="{% static '/img/chrhansen.png' %}" alt="Chr. Hansen"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="grid-x grid-padding-x">
+              <div class="cell large-4 medium-4">
+                <img class="author_profile" src="{% static '/img/sisse.jpg' %}">
+              </div>
+              <div class="cell large-8 medium-8">
+                <div class="cite">
+                  <p class="quote">”Inspiring speech by Jens Harsaae who started CFO Insights yesterday, where I together with Jakob Stausholm had the pleasure of sharing our experience with board work. Very nice conference the young CBS students organized.”</p>
+                  <div class="author">
+                    <p>Sisse Fjelsted Rasmussen, CFO at Scandinavian Tobacco Group. <img src="{% static '/img/stg.png' %}" alt="Chr. Hansen"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="grid-x grid-padding-x">
+              <div class="cell large-4 medium-4">
+                <img class="author_profile" src="{% static '/img/baltzer.jpg' %}">
+              </div>
+              <div class="cell large-8 medium-8">
+                <div class="cite">
+                  <p class="quote">”The conference had no commercial agenda but an agenda about networking, learning, and sharing of experiences, and it was precisely this that led to so many people attending which usually is not the case. I think it's super important that there is someone outside the finance industry who has no commercial interest but only has a professional interest in organizing this type of conference.”</p>
+                  <div class="author">
+                    <p>Christian Baltzer, CFO at Tryg. <img src="{% static '/img/tryg.png' %}" alt="Tryg"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="grid-x grid-padding-x">
+              <div class="cell large-4 medium-4">
+                <img class="author_profile" src="{% static '/img/anders.jpg' %}">
+              </div>
+              <div class="cell large-8 medium-8">
+                <div class="cite">
+                  <p class="quote">”Learned more about the role of the modern CFO and what it takes to land a board role. Also had the pleasure to participate in a roundtable on how Finance can impact strategy and value creation. A huge thank you to the CFO Insights team for putting together an outstanding lineup of speakers and a great conference”</p>
+                  <div class="author">
+                    <p>Anders Liu-Lindberg, Head of Global Finance PMO at Maersk. <img src="{% static '/img/maersk.png' %}" alt="Maersk"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div class="content">
+        <h1>Thank you to our sponsors and partners for making CFO Insights possible</h1>
+        <div class="grid-x grid-margin-x sponsors">
+          <div class="cell large-4">
+            <img src="{% static '/img/deloitte.png' %}" alt="Deloitte">
+          </div>
+          <div class="cell large-2">
+            <img src="{% static '/img/kpmg.png' %}" alt="KPMG">
+          </div>
+          <div class="cell large-6">
+            <img src="{% static '/img/samsung.png' %}" alt="Samsung">
+          </div>
+          <div class="cell large-6">
+            <img src="{% static '/img/odgers.png' %}" alt="Odgers Berndtson">
+          </div>
+          <div class="cell large-3">
+            <img src="{% static '/img/board.png' %}" alt="Board International">
+          </div>
+          <div class="cell large-3">
+            <img src="{% static '/img/pleo.png' %}" alt="Pleo">
+          </div>
+          <div class="cell large-3">
+            <img src="{% static '/img/am.png' %}" alt="Aston Martin Copenhagen">
+          </div>
+          <div class="cell large-4">
+            <img src="{% static '/img/accobat.png' %}" alt="Accobat">
+          </div>
+          <div class="cell large-3">
+            <img src="{% static '/img/timelog.png' %}" alt="TimeLog">
+          </div>
+          <div class="cell large-2">
+            <img src="{% static '/img/ey.png' %}" alt="EY">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section4">
+      <div class="content">
+        <h1>Interested in partnering up?</h1>
         <div class="center">
-          <a href="{% url 'speakers' %}" class="button transparent">Full speaker list</a>
+          <a href="mailto:kristoffer.lundberg@cfoinsights.org" class="button" id="contact-button">Contact us now</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="light-blue-layer">
-    <h2>Interested in speaking at CFO Insights 2018?</h2>
-    <div class="content center">
-      <p class="subheader">More than 40 top executives, influencers and experts will be taking the stage at CFO Insights. Will you join them?</p>
-      <a href="mailto:abdulwaqi.rathore@cfoinsights.org?subject=CFO%20Insights%20Speaker%20Application&cc=andreas.broby@cfoinsights.org;patrick.larsen@cfoinsights.org" class="button contentless-button">Apply to speak</a>
-    </div>
-  </section>
-
-  <section id="agenda">
-    <h2>Main topics for CFO Insights 2018</h2>
-    <div class="content">
-      <p class="subheader">More than 40 speakers take to the stage to discuss the core issues you are facing.</p>
-      <div class="grid-x grid-margin-x">
-        <div class="large-4 cell">
-          <div class="agenda-wrapper">
-            <div class="agenda-header">
-              <h3>Strategy</h3>
-            </div>
-            <div class="agenda-body ">
-              <ul>
-                {% for panel in strategy_panels %}
-                <li>{{ panel.name }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div> 
-        <div class="large-4 cell">
-          <div class="agenda-wrapper">
-            <div class="agenda-header">
-              <h3>Financial Management</h3>
-            </div>
-            <div class="agenda-body">
-              <ul>
-                {% for panel in finance_panels %}
-                <li>{{ panel.name }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="large-4 cell">
-          <div class="agenda-wrapper">
-            <div class="agenda-header">
-              <h3>Future Trends</h3>
-            </div>
-            <div class="agenda-body">
-              <ul>
-                {% for panel in future_panels %}
-                <li>{{ panel.name }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <div class="center">
-        <a href="{% url 'agenda' %}" class="button">See full agenda</a>
-      </div>
-    </div>
-  </section>
-  <section class="blue-layer">
-      <div id="tickets">
-        <div class="content content-buttonless">
-          <h2 class="subheaderless">Register now and secure your spot today</h2>
-          <div class="grid-x grid-margin-x">
-            <div class="large-6 cell">
-              <div class="ticket-wrapper">
-                <div class="ticket padded-content">
-                  <div class="ticket-content">
-                    <div class="ticket-table-wrapper">
-                      <div class="ticket-table">
-                        <h3 class="ticket-title">Student</h3>
-                        <span class="ticket-price">Invite Only</span>
-                      </div> 
-                    </div>
-                    <ul class="desktop-ticket">
-                      <li>Limited availability!</li>
-                      <li>Applications close May 11th.</li>
-                      <li>Full access to every CFO Insights keynote and panel.</li>
-                      <li>Full access to every networking event.</li>
-                    </ul>
-                    <ul class="accordion mobile-ticket" data-accordion data-allow-all-closed="true">
-                      <li class="accordion-item" data-accordion-item>
-                        <a href="#" class="accordion-title">See details</a>
-                        <div class="accordion-content" data-tab-content >
-                          <ul>
-                            <li>Limited availability!</li>
-                            <li>Applications close May 11th.</li>
-                            <li>Full access to every CFO Insights keynote and panel.</li>
-                            <li>Full access to every networking event.</li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                    <a href="https://goo.gl/forms/G0UKYAPR2zgtGoS53" class="button disabled" aria-disabled>Invites sent</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="large-6 cell">
-              <div class="ticket-wrapper">
-                <div class="ticket padded-content">
-                  <div class="ticket-content">
-                    <div class="ticket-table-wrapper">
-                      <div class="ticket-table">
-                        <h3 class="ticket-title">Standard</h3>
-                        <span class="ticket-price">3.276 DKK</span>
-                      </div>
-                    </div>
-                    <ul class="desktop-ticket">
-                      <li>Ex 25% VAT</li>
-                      <li>4.095 DKK including VAT</li>
-                      <li>Limited availability!</li>
-                      <li>Full access to every CFO Insights keynote and panel</li>
-                      <li>Full access to every networking event</li>
-                    </ul>
-                    <ul class="accordion mobile-ticket" data-accordion data-allow-all-closed="true">
-                      <li class="accordion-item" data-accordion-item>
-                        <a href="#" class="accordion-title">See details</a>
-                        <div class="accordion-content" data-tab-content >
-                          <ul>
-                            <li>Ex 25% VAT</li>
-                            <li>4.095 DKK including VAT</li>
-                            <li>Limited availability!</li>
-                            <li>Full access to every CFO Insights keynote and panel</li>
-                            <li>Full access to every networking event</li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                    <a href="https://www.eventbrite.co.uk/e/cfo-insights-2018-tickets-42846860112" class="button register-button">Register now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <section class="light-blue-layer" id="sponsors">
-    <div class="content">
-      <h2>A selection of sponsors and partners</h2>
-      <p class="subheader">CFO Insights wouldn't have been possible without the support of our sponsors and partners.</p>
-      <div class="grid-x grid-margin-x">
-        {% for sponsor in featured_sponsors %}
-        <div class="medium-3 small-6 large-3 cell sponsor-cell-img">
-          <div class="sponsor-cell-img-inner">
-            <img src="{{ sponsor.company_logo.url }}" alt="{{ sponsor.name }}">
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="center">
-        <a class="button" href="{% url 'sponsors' %}">See all 2018 sponsors</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="about">
-    <div class="content">
-      <h2 class="subheaderless">Who are CFO Insights?</h2>
-      <div class="grid-x grid-margin-x">
-        <div class="large-6 cell">
-          <img src="{% static 'img/team.jpg' %}" alt="The team behind CFO Insights is made up of 20 students.">
-        </div>
-        <div class="large-6 cell">
-          <h3>The who, the why, the what.</h3>
-          <p>CFO Insights was founded on the idea that a business is nothing more than a collection of people. We might use technology in our day to day work and the collection of people might be united behind a company name, but it is the people and the decisions they make that define the future of any company.</p>
-          <p>That's why we believe in the importance of bringing business leaders together in a neutral forum where they can learn and grow together. Otto von Bismarck famously said “Fools learn from experience. I prefer to learn from the experience of others.” and that is the core reason for why CFO Insights exists - so that we may learn from each other.</p>
-        </div>
-      </div>
-      <div class="center">
-        <a class="button button-disabled" href="{% url 'employees' %}">Read more about the team</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="blue-layer">
-    <div id="newsletter">
+  <div id="bg2">
+    <div class="section" id="section5">
       <div class="content">
-        <h2>Become an insider and get a discounted ticket</h2>
-        <p class="subheader">Get the latest updates on CFO Insights 2018.</p>
-        <form class="center" action="https://cfoinsights.createsend.com/t/j/s/ehjykd/" method="post">
-          <input class="e-mail-input" type="text" placeholder="Enter your e-mail" name="cm-ehjykd-ehjykd" type="email">
-          <input type="submit" name="submit" class="button" value="Subscribe now">
-        </form>
+        <h1>Don't worry, it wasn't only a rock concert.</h1>
+        <div class="narrow">
+          <p class="center">Marriott was fully booked and could not room another ten people that day.  We were thrilled to see the number of discussions that took place during our networking sessions. We hope that you met many new peers and expanded your network of finance professionals. A special thanks to our exhibitors who put on a show with everything from VR glasses and other exciting new techs.</p>
+        </div>
+        <div class="grid-x grid-padding-x" id="lobby_pics">
+          <div class="cell large-6">
+            <img src="{% static '/img/lunch.jpg' %}">
+          </div>
+          <div class="cell large-6">
+            <img src="{% static '/img/networking1.jpg' %}">
+          </div>
+        </div>
+        <h1>CFO Insights 2018 was featured in</h1>
+        <div class="grid-x grid-margin-x" id="media">
+          <div class="cell large-4"><img src="{% static '/img/radio24syv.png' %}" alt="Radio24syv"></div>
+          <div class="cell large-4"><img src="{% static '/img/jp.png' %}" alt="JyllandsPosten"></div>
+          <div class="cell large-4"><img src="{% static '/img/boersen.png' %}" alt="Boersen"></div>
+        </div>
       </div>
     </div>
-  </section>
-  {% endblock %}
+  </div>
+  <div id="bg3">
+    <div class="section">
+      <div class="content center">
+        <h1>Become an insider today</h1>
+        <p>Stay updated on upcoming events by signing up to the CFO Insights network. We will continue to interview leading finance professionals and host industry-leading events throughout the coming years and we hope that you will join our network.</p>
+        <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="A61C50BEC994754B1D79C5819EC1255C9EC69CDDC474BFD22502C470E08C74A9344FE360D8F28890D981BEA26A43C8ECDF0784B45FE9BEF151A7E50D3686F54D">
+          <div class="grid-x">
+            <div class="cell large-7">
+              <input id="fieldEmail" class="js-cm-email-input" name="cm-ehjykd-ehjykd" type="email" required placeholder="Your e-mail" /> 
+            </div>
+            <div class="cell large-5">
+              <button class="js-cm-submit-button button" type="submit" id="email_button">Sign up now</button> 
+            </div>
+          </div>
+          </form>
+          <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+        </div>
+      </div>
+    </div>
 
-  {% block ga_code %}{%endblock%}
-
-  {% block scripts %}
-  <script type="text/javascript" src='{% static "landing/landing.js" %}'></script>
-
-  <script src="//www.google-analytics.com/cx/api.js?experiment=RTbYn9nHTyCnQPbLlYA5AQ"></script>
-
-  <script>
-    var chosenVariation = cxApi.chooseVariation();
-  </script>
-
-  <script type="text/javascript">
-    var pageVariations = [
-      function() {},  // Original: Do nothing. This will render the default HTML.
-      function() {
-        $('#test-sw').hide();
-        $('#test-cb').show();
-      },
-    ]
-    // Wait for the DOM to load, then execute the view for the chosen variation.
-    $(document).ready(function(){
-      // Execute the chosen view
-      pageVariations[chosenVariation]();
-    });
-  </script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115153787-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-115153787-1');
-</script>
-  {% endblock %}
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.js' %}"></script>
+    <script src="{% static 'js/jquery_placeholder.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+  </html>

@@ -12,15 +12,32 @@ from django.views.static import serve
 from django.views.generic import RedirectView
 from django.core.urlresolvers import reverse_lazy
 
-prefix_urls = [
-    url(r'^$', include('landing.urls')),
-]
 
+admin.autodiscover()
 
 urlpatterns = [
+    url(r'^sitemap\.xml$', sitemap,
+        {'sitemaps': {'cmspages': CMSSitemap}}),
+]
+
+prefix_urls = [
+    url(r'^$', include('landing.urls')),
+    url(r'^agenda/', include('agenda.urls')),
+    url(r'^speakers/', include('speakers.urls')),
+    url(r'^sponsors/', include('sponsors.urls')),
+    url(r'^team/', include('employees.urls')),
+    url(r'^survey/', include('survey.urls', namespace='survey')),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
+]
+
+
+urlpatterns += (
     url(r'^$', RedirectView.as_view(url=reverse_lazy('index'))),
     url(r'^denmark/', include(prefix_urls)),
-]
+    url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^cms', include('cms.urls')),
+)
 
 # This is only needed when using runserver.
 if settings.DEBUG:
